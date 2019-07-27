@@ -29,16 +29,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: "data",
-      },
-    },
-    {
-      resolve: "gatsby-transformer-yaml",
-      typeName: "Shop",
-    },
-    {
       resolve: "gatsby-plugin-material-ui",
     },
     {
