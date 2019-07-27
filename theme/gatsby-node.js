@@ -6,11 +6,28 @@ exports.createPages = async ({ actions, graphql }) => {
           id
           languages
           languageWithoutUrlPrefix
-          products(shopId:"${process.env.GATSBY_BRIKL_SHOP_ID}"){
-            edges{
-              node{
+          currencies
+          defaultCurrency
+          defaultLanguage
+          name
+          collections {
+            edges {
+              node {
                 id
+                mainBanner
                 no
+                description {
+                  id
+                  text {
+                    content
+                    langCode
+                  }
+                }
+                thumbnail
+                slugs {
+                  content
+                  langCode
+                }
                 title {
                   id
                   text {
@@ -18,9 +35,64 @@ exports.createPages = async ({ actions, graphql }) => {
                     langCode
                   }
                 }
-                slugs{
+                products {
+                  collectionId
+                  featured
+                  productId
+                  sortOrder
+                  product {
+                    id
+                    inventory
+                    media {
+                      id
+                      image
+                      isThumbnail
+                      isBanner
+                      productId
+                    }
+                    no
+                    price {
+                      value
+                      currency
+                      includesTax
+                      taxPercent
+                    }
+                    status
+                    title {
+                      id
+                      text {
+                        content
+                        langCode
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          products(shopId:"${process.env.GATSBY_BRIKL_SHOP_ID}"){
+            edges {
+              node {
+                id
+                inventory
+                no
+                price {
+                  currency
+                  value
+                  taxPercent
+                  includesTax
+                }
+                slugs {
                   content
                   langCode
+                }
+                status
+                title {
+                  id
+                  text {
+                    content
+                    langCode
+                  }
                 }
               }
             }
@@ -44,6 +116,7 @@ exports.createPages = async ({ actions, graphql }) => {
   try {
     const languageWithoutUrlPrefix = shop.languageWithoutUrlPrefix
 
+    // generate home page
     shop.languages.forEach(language => {
       const urlPrefix = setUrlPrefix(languageWithoutUrlPrefix, language)
 
@@ -57,6 +130,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
       const products = shop.products.edges
 
+      // generate product pages
       products.forEach(productNode => {
         const product = productNode.node
         if (product.slugs) {
@@ -81,6 +155,34 @@ exports.createPages = async ({ actions, graphql }) => {
           }
         }
       })
+
+      const collections = shop.collections.edges
+
+      // generate collection pages
+      collections.forEach(collectionNode => {
+        const collection = collectionNode.node
+        if (collection.slugs) {
+          if (
+            collection.slugs &&
+            collection.slugs.find(e => e.langCode === language)
+          ) {
+            actions.createPage({
+              path: `/${urlPrefix}${
+                collection.slugs.find(e => e.langCode === language).content
+              }`,
+              component: require.resolve("./src/templates/collection.js"),
+              context: {
+                langCode: language,
+                slugs: collection.slugs,
+                collection: collection,
+                urlPrefix,
+                shop,
+                collectionId: collection.id,
+              },
+            })
+          }
+        }
+      })
     })
   } catch (error) {
     console.log("error", error)
@@ -90,10 +192,8 @@ exports.createPages = async ({ actions, graphql }) => {
 const setUrlPrefix = (languageWithoutUrlPrefix, language) => {
   try {
     if (languageWithoutUrlPrefix && languageWithoutUrlPrefix === language) {
-      // console.log('no prefix')
       return ""
     } else {
-      // console.log('language.substring(0,2)', language.substring(0,2)+'/')
       return language.substring(0, 2) + "/"
     }
   } catch (error) {
