@@ -5,12 +5,17 @@
     "type": "git",
     "url": "https://github.com/Brikl/gatsby-theme-brikl-store.git"
   },
-  "contributors": [    
+  "contributors": [
     "Patrik Molnar <info@patrikmolnar.com>",
     "Tobias Meixner <meixner.tobias@gmail.com>"
   ],
   "version": "0.0.1",
   "main": "index.js",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "yarn && gatsby develop",
+    "clean": "gatsby clean"
+  },
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.13.1",
