@@ -3,5 +3,8 @@
   "workspaces": [
     "theme",
     "demo"
-  ]
+  ],
+  "devDependencies": {
+    "semantic-release": "15.13.18"
+  }
 }
