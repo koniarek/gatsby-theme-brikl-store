@@ -1,11 +1,15 @@
 {
-  "name": "gatsby-theme-jam-example",
-  "author": "Jason Lengstorf <jason@gatsbyjs.com>",
+  "name": "gatsby-theme-brikl-store",
+  "author": "Brikl Ltd. <info@brikl.io>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jlengstorf/gatsby-theme-jam-example.git"
+    "url": "https://github.com/Brikl/gatsby-theme-brikl-store.git"
   },
-  "version": "1.0.1",
+  "contributors": [    
+    "Patrik Molnar <info@patrikmolnar.com>",
+    "Tobias Meixner <meixner.tobias@gmail.com>"
+  ],
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
@@ -34,6 +38,7 @@
     "react-helmet": "^5.2.1"
   },
   "keywords": [
+    "brikl",
     "gatsby",
     "gatsby-theme",
     "gatsby-plugin"
