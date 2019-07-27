@@ -6,24 +6,41 @@ import {
   Card,
   CardActionArea,
   CardContent,
+  Paper,
 } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 
 const CollectionProducts = ({ products, pageContext }) => (
   <>
-    <Grid container style={{ padding: "24px 24px 12px" }}>
-      <Typography component="h2" variant="h2">
-        {getTextFromLanguage(pageContext.collection.title.text, "en_UK")}
-      </Typography>
+    <Grid justify="center" style={{ padding: "24px 24px 12px" }} container>
+      <Paper
+        style={{
+          width: "80% ",
+          justifyContent: "center",
+          textAlign: "center",
+          padding: 20,
+          backgroundColor: "#940159",
+        }}
+        elevation={1}
+      >
+        <Typography style={{ color: "#ffffff" }} component="h2" variant="h2">
+          {getTextFromLanguage(pageContext.collection.title.text, "en_UK")}
+        </Typography>
+      </Paper>
     </Grid>
-    <Grid container spacing={2} style={{ padding: "12px 24px" }}>
+    <Grid
+      justify="center"
+      container
+      spacing={3}
+      style={{ padding: "12px 24px" }}
+    >
       {products.map(productData => {
         let product = productData.product
 
         console.log(product)
 
         return (
-          <Grid item xs={6} sm={6} md={4} lg={3} xl={3} key={product.id}>
+          <Grid item xs={10} sm={6} md={4} lg={3} xl={3} key={product.id}>
             <Link
               to={"/en/" + getTextFromLanguage(product.slugs, "en_UK")}
               style={{ textDecoration: "none" }}

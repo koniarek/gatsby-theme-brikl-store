@@ -6,27 +6,50 @@ import {
   Card,
   CardActionArea,
   CardContent,
+  Paper,
 } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 
 const ProductList = ({ products }) => (
   <>
-    <Grid container style={{ padding: "24px 24px 12px" }}>
-      <Typography component="h2" variant="h5">
-        Products
-      </Typography>
+    <Grid spacing={2} justify="center" container style={{ padding: 40 }}>
+      <Paper
+        style={{
+          width: "100% ",
+          justifyContent: "center",
+          textAlign: "center",
+          padding: 20,
+          backgroundColor: "#940159",
+        }}
+        elevation={1}
+      >
+        <Typography style={{ color: "#ffffff" }} component="h2" variant="h3">
+          Products
+        </Typography>
+      </Paper>
     </Grid>
-    <Grid container spacing={2} style={{ padding: "12px 24px" }}>
+    <Grid
+      justify="center"
+      container
+      spacing={2}
+      style={{ padding: "12px 24px" }}
+    >
       {products.map(productNode => {
         let product = productNode.node
 
         return (
-          <Grid item xs={6} sm={6} md={4} lg={3} xl={3} key={product.id}>
+          <Grid item xs={10} sm={6} md={4} lg={4} xl={3} key={product.id}>
             <Link
               to={"/en/" + getTextFromLanguage(product.slugs, "en_UK")}
               style={{ textDecoration: "none" }}
             >
-              <Card style={{ height: "100%" }}>
+              <Card
+                style={{
+                  height: "100%",
+                  padding: "0px 5px 0px 5px",
+                  margin: "0px 5px 0px 5px",
+                }}
+              >
                 <CardActionArea>
                   <img
                     src={product.media[0].image}

@@ -6,15 +6,27 @@ import {
   Card,
   CardActionArea,
   CardContent,
+  Paper,
 } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 
 const CollectionList = ({ collections }) => (
   <>
-    <Grid container style={{ padding: "24px 24px 12px" }}>
-      <Typography component="h2" variant="h5">
-        Collections
-      </Typography>
+    <Grid spacing={3} container style={{ padding: 40 }}>
+      <Paper
+        style={{
+          width: "100% ",
+          justifyContent: "center",
+          textAlign: "center",
+          padding: 20,
+          backgroundColor: "#940159",
+        }}
+        elevation={1}
+      >
+        <Typography style={{ color: "#ffffff" }} component="h2" variant="h3">
+          Collections
+        </Typography>
+      </Paper>
     </Grid>
     <Grid
       container
