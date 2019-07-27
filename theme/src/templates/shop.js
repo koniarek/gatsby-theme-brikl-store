@@ -15,11 +15,11 @@ const ShopTemplate = ({ pageContext }) => {
       <Banner />
       <Container maxWidth="lg">
         <ProductList products={products} />
-        <Grid container>
+        {/* <Grid container>
           <HeroImage />
           <HeroImage />
           <HeroImage />
-        </Grid>
+        </Grid> */}
         <CollectionList collections={collections} />
       </Container>
     </Layout>
