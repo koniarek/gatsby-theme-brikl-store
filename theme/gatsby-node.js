@@ -58,7 +58,18 @@ exports.createPages = async ({ actions, graphql }) => {
                       taxPercent
                     }
                     status
+                    slugs {
+                      content
+                      langCode
+                    }
                     title {
+                      id
+                      text {
+                        content
+                        langCode
+                      }
+                    }
+                    description {
                       id
                       text {
                         content
@@ -76,6 +87,11 @@ exports.createPages = async ({ actions, graphql }) => {
                 id
                 inventory
                 no
+                media{
+                  id
+                  image
+                  sortOrder
+                }
                 price {
                   currency
                   value
@@ -87,6 +103,13 @@ exports.createPages = async ({ actions, graphql }) => {
                   langCode
                 }
                 status
+                description {
+                  id
+                  text {
+                    content
+                    langCode
+                  }
+                }
                 title {
                   id
                   text {
