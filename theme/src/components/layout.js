@@ -1,36 +1,20 @@
 import React from "react"
-import { css, Global } from "@emotion/core"
-import { Layout as StyledLayout, Header, Main, Container } from "theme-ui"
-import { graphql, useStaticQuery } from "gatsby"
+import Header from "./Header"
+import Footer from "./Footer"
+import { Helmet } from "react-helmet"
+import { ThemeProvider } from "@material-ui/styles"
+import { theme } from "./Theme"
+import "normalize.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  return (
-    <StyledLayout>
-      <Global
-        styles={css`
-          body {
-            margin: 0;
-          }
-        `}
-      />
-      <Header>
-        <span>{data.site.siteMetadata.title}</span>
-      </Header>
-      <Main>
-        <Container>{children}</Container>
-      </Main>
-    </StyledLayout>
-  )
-}
+const Layout = ({ children }) => (
+  <ThemeProvider theme={theme}>
+    <Helmet>
+      <title>Gatsby Theme</title>
+    </Helmet>
+    <Header />
+    <div style={{ minHeight: "90vh" }}>{children}</div>
+    <Footer />
+  </ThemeProvider>
+)
 
 export default Layout
