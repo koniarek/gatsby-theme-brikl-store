@@ -92,11 +92,17 @@ const Header = ({ languages, defaultLanguage }) => {
           />
 
           <div className={classes.grow} />
-          <Grid justify="center" className={classes.sectionDesktop}>
-            <Link className={classes.link}>Home</Link>
-            <Link className={classes.link}>Products</Link>
-            <Link className={classes.link}>Collections</Link>
-            <Link className={classes.link}>Teamstores</Link>
+          <Grid container justify="flex-end" className={classes.sectionDesktop}>
+            <Link to={`${lang}/`} className={classes.link}>
+              Home
+            </Link>
+            <Link to={`${lang}/products`} className={classes.link}>
+              Products
+            </Link>
+            <Link to={`${lang}/collections`} className={classes.link}>
+              Collections
+            </Link>
+            {/* <Link className={classes.link}>Teamstores</Link> */}
             <LangSwitch
               selectedLanguage={lang}
               languages={languages}

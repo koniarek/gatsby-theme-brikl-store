@@ -7,7 +7,7 @@ const Collection = ({ pageContext }) => {
 
   try {
     return (
-      <Layout>
+      <Layout pageContext={pageContext}>
         <CollectionProducts
           pageContext={pageContext}
           products={collection.products}

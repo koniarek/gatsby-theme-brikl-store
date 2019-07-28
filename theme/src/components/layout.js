@@ -7,7 +7,6 @@ import { theme } from "./Theme"
 import "normalize.css"
 
 const Layout = ({ children, pageContext }) => {
-  console.log(pageContext)
   let languages = pageContext.shop.languages
   let defaultLanguage = pageContext.shop.defaultLanguage
   return (

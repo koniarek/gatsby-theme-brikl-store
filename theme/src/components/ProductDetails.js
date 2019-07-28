@@ -17,7 +17,6 @@ const useStyles = makeStyles(theme =>
 
 const ProductDetails = ({ product }) => {
   const classes = useStyles({})
-  console.log(product)
   try {
     return (
       <Grid style={{ alignSelf: "center" }} container>

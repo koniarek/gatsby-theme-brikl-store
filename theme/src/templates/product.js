@@ -8,7 +8,7 @@ const ProductTemplate = ({ pageContext }) => {
   let product = pageContext.product
 
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <Grid spacing={3} justify="center" container>
         <Grid item xs={10} sm={6} md={4} lg={4} xl={3}>
           <ImageGallery media={product.media} />
