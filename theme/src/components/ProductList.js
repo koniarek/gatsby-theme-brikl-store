@@ -58,6 +58,7 @@ const ProductList = ({ products }) => (
                       width: "100%",
                       objectFit: "contain",
                     }}
+                    alt="Thumbnail"
                   />
 
                   <CardContent>

@@ -53,6 +53,7 @@ const CollectionList = ({ collections }) => (
                       borderBottomLeftRadius: 7,
                       borderBottomRightRadius: 7,
                     }}
+                    alt="Thumbnail"
                   />
 
                   <CardContent>

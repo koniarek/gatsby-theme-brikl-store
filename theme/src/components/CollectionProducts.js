@@ -54,6 +54,7 @@ const CollectionProducts = ({ products, pageContext }) => (
                       width: "100%",
                       objectFit: "contain",
                     }}
+                    alt="Thumbnail"
                   />
 
                   <CardContent>
