@@ -12,21 +12,28 @@ import { getTextFromLanguage } from "../utils/utils"
 
 const CollectionProducts = ({ products, pageContext }) => (
   <>
-    <Grid justify="center" style={{ padding: "24px 24px 12px" }} container>
-      <Paper
+    <Grid spacing={2} justify="center" container style={{ padding: 40 }}>
+      <Typography
         style={{
-          width: "80% ",
-          justifyContent: "center",
-          textAlign: "center",
-          padding: 20,
-          backgroundColor: "#940159",
+          color: "#a6026a",
+          padding: "10px 10px 20px 0px",
         }}
-        elevation={1}
+        component="h2"
+        variant="h3"
       >
-        <Typography style={{ color: "#ffffff" }} component="h2" variant="h2">
-          {getTextFromLanguage(pageContext.collection.title.text, "en_UK")}
-        </Typography>
-      </Paper>
+        {getTextFromLanguage(pageContext.collection.title.text, "en_UK")}
+      </Typography>
+      <Grid
+        container
+        direction="row"
+        style={{
+          position: "absolute",
+          width: "40%",
+          alignSelf: "flex-end",
+          borderBottom: "8px solid #a6026a",
+          borderBottomWidth: "8px",
+        }}
+      />
     </Grid>
     <Grid
       justify="center"

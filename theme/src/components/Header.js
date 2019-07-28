@@ -85,15 +85,17 @@ const Header = ({ languages, defaultLanguage }) => {
     <div className={classes.grow}>
       <AppBar elevation={0} position="static" color="primary">
         <Toolbar style={{ padding: 8 }}>
-          <img
-            src={BriklBlack}
-            alt="BrikL Logo"
-            style={{
-              padding: "10px 10px 10px 25px",
-              height: 60,
-              objectFit: "contain",
-            }}
-          />
+          <Link to={`${lang}/`}>
+            <img
+              src={BriklBlack}
+              alt="BrikL Logo"
+              style={{
+                padding: "10px 10px 10px 25px",
+                height: 60,
+                objectFit: "contain",
+              }}
+            />
+          </Link>
 
           <div className={classes.grow} />
           <Grid container justify="flex-end" className={classes.sectionDesktop}>

@@ -11,7 +11,7 @@ import { getTextFromLanguage } from "../utils/utils"
 
 const CollectionList = ({ collections }) => (
   <>
-    <Grid spacing={2} justify="flex-start" container style={{ padding: 40 }}>
+    <Grid spacing={2} justify="center" container style={{ padding: 40 }}>
       <Typography
         style={{
           color: "#a6026a",
