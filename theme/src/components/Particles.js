@@ -20,7 +20,7 @@ class Canvas extends Component {
     return (
       <Particles
         height="70vh"
-        width={this.state.width}
+        width={width}
         params={{
           particles: {
             number: {

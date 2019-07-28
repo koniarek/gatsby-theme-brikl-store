@@ -9,7 +9,8 @@ import {
 } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 
-const ProductList = ({ products }) => {
+const FeaturedProducts = ({ products }) => {
+  console.log(products)
   return (
     <>
       <Grid spacing={2} justify="flex-start" container style={{ padding: 40 }}>
@@ -21,7 +22,7 @@ const ProductList = ({ products }) => {
           component="h2"
           variant="h3"
         >
-          Products
+          Featured
         </Typography>
         <Grid
           container
@@ -104,4 +105,4 @@ const ProductList = ({ products }) => {
   )
 }
 
-export default ProductList
+export default FeaturedProducts

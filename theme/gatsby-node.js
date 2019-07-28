@@ -144,6 +144,15 @@ exports.createPages = async ({ actions, graphql }) => {
     shop.languages.forEach(language => {
       const urlPrefix = setUrlPrefix(languageWithoutUrlPrefix, language)
 
+      // all products page
+      actions.createPage({
+        path: basePath + urlPrefix + "products",
+        component: require.resolve("./src/templates/products.js"),
+        context: {
+          shop,
+        },
+      })
+
       actions.createPage({
         path: basePath + urlPrefix,
         component: require.resolve("./src/templates/shop.js"),
