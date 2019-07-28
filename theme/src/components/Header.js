@@ -83,12 +83,16 @@ const Header = ({ languages, defaultLanguage }) => {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" color="primary">
+      <AppBar elevation={0} position="static" color="primary">
         <Toolbar style={{ padding: 8 }}>
           <img
             src={BriklBlack}
             alt="BrikL Logo"
-            style={{ padding: 10, height: 45, objectFit: "contain" }}
+            style={{
+              padding: "10px 10px 10px 25px",
+              height: 60,
+              objectFit: "contain",
+            }}
           />
 
           <div className={classes.grow} />

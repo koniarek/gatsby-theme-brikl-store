@@ -24,7 +24,7 @@ const ProductList = ({ products }) => (
         elevation={1}
       >
         <Typography style={{ color: "#ffffff" }} component="h2" variant="h3">
-          Products
+          Featured
         </Typography>
       </Paper>
     </Grid>

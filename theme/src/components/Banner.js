@@ -1,7 +1,7 @@
 import React from "react"
-import { Grid } from "@material-ui/core"
-import BannerImage from "../images/BannerImage.jpg"
+import { Grid, Typography } from "@material-ui/core"
 import { createStyles, makeStyles } from "@material-ui/core/styles"
+import Particles from "./Particles"
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -21,16 +21,14 @@ const Banner = () => {
       container
       className={classes.banner}
       style={{
-        backgroundImage: `url(${BannerImage})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundOrigin: "border-box",
         height: "70vh",
         position: "relative",
       }}
       justify={"center"}
       alignItems={"center"}
-    />
+    >
+      <Particles />
+    </Grid>
   )
 }
 
