@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { makeStyles, createStyles } from "@material-ui/core/styles"
 import { AppBar, Toolbar, IconButton, Grid } from "@material-ui/core"
 import MenuIcon from "@material-ui/icons/Menu"
@@ -6,11 +6,19 @@ import CartIcon from "@material-ui/icons/ShoppingCart"
 import BriklBlack from "../images/BrikLBlack.png"
 import Drawer from "@material-ui/core/Drawer"
 import { Link } from "gatsby"
+import LangSwitch from "./LangSwitch"
 
 const useStyles = makeStyles(theme =>
   createStyles({
     grow: {
       flexGrow: 1,
+    },
+    formControl: {
+      margin: theme.spacing(1),
+      minWidth: 120,
+    },
+    selectEmpty: {
+      marginTop: theme.spacing(2),
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -44,11 +52,13 @@ const useStyles = makeStyles(theme =>
   })
 )
 
-const Header = () => {
+const Header = ({ languages, defaultLanguage }) => {
   const classes = useStyles()
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     top: false,
   })
+
+  const [lang, setLang] = useState(defaultLanguage.split("_")[0])
 
   const toggleDrawer = (side, open) => event => {
     if (
@@ -87,6 +97,11 @@ const Header = () => {
             <Link className={classes.link}>Products</Link>
             <Link className={classes.link}>Collections</Link>
             <Link className={classes.link}>Teamstores</Link>
+            <LangSwitch
+              selectedLanguage={lang}
+              languages={languages}
+              setLanguage={setLang}
+            />
             <Link className={classes.link}>
               <IconButton>
                 <CartIcon style={{ color: "#a6026a" }} />

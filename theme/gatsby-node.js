@@ -126,6 +126,7 @@ exports.createPages = async ({ actions, graphql }) => {
   `)
 
   const shop = result.data.brikl.shop
+  const defaultLanguage = shop.defaultLanguage.split("_")[0]
 
   const basePath = "/"
   actions.createPage({
@@ -148,6 +149,7 @@ exports.createPages = async ({ actions, graphql }) => {
         component: require.resolve("./src/templates/shop.js"),
         context: {
           shop,
+          languages: language,
         },
       })
 

@@ -10,7 +10,7 @@ const ShopTemplate = ({ pageContext }) => {
   const collections = pageContext.shop.collections.edges
 
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <Banner />
       <Container maxWidth="lg">
         <ProductList products={products} />
