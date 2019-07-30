@@ -43,7 +43,7 @@ const CollectionProducts = ({ products, pageContext }) => (
       {products.map(productData => {
         let product = productData.product
 
-        console.log(product)
+        // console.log(product)
 
         return (
           <Grid item xs={10} sm={6} md={4} lg={3} xl={3} key={product.id}>

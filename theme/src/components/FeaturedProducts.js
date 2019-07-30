@@ -10,7 +10,7 @@ import {
 import { getTextFromLanguage } from "../utils/utils"
 
 const FeaturedProducts = ({ products }) => {
-  console.log(products)
+  // console.log(products)
   return (
     <>
       <Grid spacing={2} justify="center" container style={{ padding: 40 }}>

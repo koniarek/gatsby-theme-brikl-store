@@ -7,6 +7,7 @@ module.exports = {
     title: "Gatsby Theme BrikL Store",
     titleTemplate: "%s · Gatsby Theme BrikL Store",
     description: "A starter template for BrikL storefronts",
+    siteUrl: "http://localhost:8000",
   },
   plugins: [
     {
