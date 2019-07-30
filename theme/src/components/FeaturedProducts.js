@@ -5,7 +5,6 @@ import {
   Grid,
   Card,
   CardActionArea,
-  CardContent,
 } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 

@@ -46,7 +46,7 @@ const ImageGallery = ({ media }) => {
         />
       </Grid>
       {media.map(image => (
-        <Grid key={image.id} item lg={3} className={classes.imageListContainer}>
+        <Grid key={image.id} item xs={4} lg={3} className={classes.imageListContainer}>
           <img
             src={image.image}
             onClick={() => setSelectedMedia(image.image)}
