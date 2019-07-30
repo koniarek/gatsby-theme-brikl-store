@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import FeaturedProducts from "../components/FeaturedProducts"
-import Banner from "../components/banner"
+import Banner from "../components/Banner"
 import { Container } from "@material-ui/core"
 import CollectionList from "../components/CollectionList"
 import SEO from "../components/SEO"
