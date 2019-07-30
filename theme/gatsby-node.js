@@ -144,12 +144,23 @@ exports.createPages = async ({ actions, graphql }) => {
     shop.languages.forEach(language => {
       const urlPrefix = setUrlPrefix(languageWithoutUrlPrefix, language)
 
+      // cart page
+      actions.createPage({
+        path: basePath + urlPrefix + "cart",
+        component: require.resolve("./src/templates/cart.js"),
+        context: {
+          shop,
+          urlPrefix,
+        },
+      })
+
       // all collections page
       actions.createPage({
         path: basePath + urlPrefix + "collections",
         component: require.resolve("./src/templates/collections.js"),
         context: {
           shop,
+          urlPrefix,
         },
       })
 
@@ -159,6 +170,7 @@ exports.createPages = async ({ actions, graphql }) => {
         component: require.resolve("./src/templates/products.js"),
         context: {
           shop,
+          urlPrefix,
         },
       })
 
@@ -168,6 +180,7 @@ exports.createPages = async ({ actions, graphql }) => {
         context: {
           shop,
           languages: language,
+          urlPrefix,
         },
       })
 
@@ -182,7 +195,7 @@ exports.createPages = async ({ actions, graphql }) => {
             product.slugs.find(e => e.langCode === language)
           ) {
             actions.createPage({
-              path: `/${urlPrefix}${
+              path: `/${urlPrefix}products/${
                 product.slugs.find(e => e.langCode === language).content
               }`,
               component: require.resolve("./src/templates/product.js"),
@@ -210,7 +223,7 @@ exports.createPages = async ({ actions, graphql }) => {
             collection.slugs.find(e => e.langCode === language)
           ) {
             actions.createPage({
-              path: `/${urlPrefix}${
+              path: `/${urlPrefix}collections/${
                 collection.slugs.find(e => e.langCode === language).content
               }`,
               component: require.resolve("./src/templates/collection.js"),
