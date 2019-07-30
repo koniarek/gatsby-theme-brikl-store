@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../components/Layout"
-import FeaturedProducts from "../components/FeaturedProducts"
-import Banner from "../components/Banner"
+import Layout from "../components/layout"
+import FeaturedProducts from "../components/featuredproducts"
+import Banner from "../components/banner"
 import { Container } from "@material-ui/core"
-import CollectionList from "../components/CollectionList"
-import SEO from "../components/SEO"
+import CollectionList from "../components/collectionlist"
+import SEO from "../components/seo"
 
 const ShopTemplate = ({ pageContext }) => {
   const products = pageContext.shop.products.edges

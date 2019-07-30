@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/Layout"
-import ProductList from "../components/ProductList"
+import Layout from "../components/layout"
+import ProductList from "../components/productlist"
 import { Container } from "@material-ui/core"
-import SEO from "../components/SEO"
+import SEO from "../components/seo"
 
 const ProductsTemplate = ({ pageContext }) => {
   const products = pageContext.shop.products.edges

@@ -1,7 +1,7 @@
 import React from "react"
 import { Grid } from "@material-ui/core"
 import { createStyles, makeStyles } from "@material-ui/core/styles"
-import Particles from "./Particles"
+import Particles from "./particles"
 
 const useStyles = makeStyles(theme =>
   createStyles({

@@ -6,7 +6,7 @@ import CartIcon from "@material-ui/icons/ShoppingCart"
 import BriklBlack from "../images/BrikLBlack.png"
 import Drawer from "@material-ui/core/Drawer"
 import { Link } from "gatsby"
-import LangSwitch from "./LangSwitch"
+import LangSwitch from "./langswitch"
 
 const useStyles = makeStyles(theme =>
   createStyles({
