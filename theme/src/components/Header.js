@@ -186,7 +186,7 @@ const Header = ({ languages, defaultLanguage }) => {
               aria-label="Expand menu"
               onClick={toggleDrawer("top", true)}
             >
-              <MenuIcon style={{ color: "#000" }} />
+              <MenuIcon style={{ color: "#000", fontSize: 35 }} />
             </IconButton>
           </div>
           <Drawer
