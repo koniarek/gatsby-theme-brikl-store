@@ -7,7 +7,9 @@ import { theme } from "./Theme"
 
 const Layout = ({ children, pageContext }) => {
   let languages = pageContext.shop.languages
-  let urlPrefix = pageContext.urlPrefix.split("/")[0]
+  let urlPrefix = pageContext.urlPrefix
+    ? pageContext.urlPrefix.split("/")[0]
+    : "en"
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
@@ -15,11 +17,11 @@ const Layout = ({ children, pageContext }) => {
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet"/>
       </Helmet>
 
-      <>
+      <div style={{ overflow: "hidden" }}>
         <Header languages={languages} defaultLanguage={urlPrefix} />
         <div style={{ minHeight: "90vh"}}>{children}</div>
         <Footer />
-      </>
+      </div>
     </ThemeProvider>
   )
 }
