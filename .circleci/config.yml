@@ -16,15 +16,16 @@ jobs:
           paths:
             - node_modules
           key: gatsby-theme-brikl-store-{{ checksum "package.json" }}
-  release:
-    docker:
-      - image: circleci/node:latest
+  deploy:
     steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - gatsby-theme-brikl-store-{{ checksum "package.json" }}
-      - run: npx semantic-release
+      - attach_workspace:
+        at: ~/repo
+      - run:
+        name: Authenticate with registry
+        command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+      - run:
+        name: Publish package
+        command: npm publish
 workflows:
   version: 2
   build_release:
