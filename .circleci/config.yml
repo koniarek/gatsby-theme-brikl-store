@@ -19,20 +19,12 @@ jobs:
   release:
     docker:
       - image: circleci/node:latest
-    working_directory: ~/repo/theme
     steps:
       - checkout
       - restore_cache:
           keys:
             - gatsby-theme-brikl-store-{{ checksum "package.json" }}
-      - run: Navigation to theme directory
-        command: cd ~/repo/theme
-      - run:
-        name: Authenticate with registry
-        command: echo "//packagecloud.io/armando/node-test-package/npm/:_authToken=$npm_TOKEN" > ~/repo/theme/.npmrc
-      - run:
-        name: Publish package
-        command: npm publish
+      - run: npx semantic-release
 workflows:
   version: 2
   build_release:
