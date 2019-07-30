@@ -10,7 +10,9 @@ const ShopTemplate = ({ pageContext }) => {
   const products = pageContext.shop.products.edges
   const collections = pageContext.shop.collections.edges
   let langCode = pageContext.languages
-  let urlPrefix = pageContext.urlPrefix.split("/")[0]
+  let urlPrefix = pageContext.urlPrefix
+    ? pageContext.urlPrefix.split("/")[0]
+    : "en"
 
   return (
     <Layout pageContext={pageContext}>

@@ -137,6 +137,13 @@ exports.createPages = async ({ actions, graphql }) => {
     },
   })
 
+  actions.createRedirect({
+    fromPath: `/`,
+    toPath: `/en`,
+    redirectInBrowser: true,
+    isPermanent: true,
+  })
+
   try {
     const languageWithoutUrlPrefix = shop.languageWithoutUrlPrefix
 

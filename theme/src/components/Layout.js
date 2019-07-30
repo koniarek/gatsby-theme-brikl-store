@@ -7,7 +7,9 @@ import { theme } from "./Theme"
 
 const Layout = ({ children, pageContext }) => {
   let languages = pageContext.shop.languages
-  let urlPrefix = pageContext.urlPrefix.split("/")[0]
+  let urlPrefix = pageContext.urlPrefix
+    ? pageContext.urlPrefix.split("/")[0]
+    : "en"
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
