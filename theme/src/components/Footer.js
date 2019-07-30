@@ -20,7 +20,15 @@ const Footer = () => {
               variant="body1"
             >
               <span role="img" aria-label="heart">
-                built with ❤️ by BrikL
+                built with ❤️ by{" "}
+                <a
+                  target="_blank"
+                  style={{ color: "#000" }}
+                  href="https://www.brikl.io"
+                  rel="noopener noreferrer"
+                >
+                  BrikL
+                </a>
               </span>
             </Typography>
           </Grid>

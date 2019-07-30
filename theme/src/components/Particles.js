@@ -24,7 +24,7 @@ class Canvas extends Component {
         params={{
           particles: {
             number: {
-              value: 150,
+              value: 100,
               density: {
                 enable: true,
                 value_area: 600,
@@ -50,8 +50,8 @@ class Canvas extends Component {
               random: true,
               anim: {
                 enable: true,
-                speed: 0.1,
-                opacity_min: 0.1,
+                speed: 0.5,
+                opacity_min: 0,
                 sync: false,
               },
             },
@@ -67,7 +67,7 @@ class Canvas extends Component {
             },
             move: {
               enable: true,
-              speed: 0.3,
+              speed: 0.8,
               direction: "none",
               random: false,
               straight: false,

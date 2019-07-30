@@ -6,7 +6,6 @@ import {
   Card,
   CardActionArea,
   CardContent,
-  Paper,
 } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 
@@ -49,7 +48,7 @@ const CollectionProducts = ({ products, pageContext }) => (
         return (
           <Grid item xs={10} sm={6} md={4} lg={3} xl={3} key={product.id}>
             <Link
-              to={"/en/" + getTextFromLanguage(product.slugs, "en_UK")}
+              to={"/en/products/" + getTextFromLanguage(product.slugs, "en_UK")}
               style={{ textDecoration: "none" }}
             >
               <Card style={{ height: "100%" }}>

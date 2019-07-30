@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import CollectionProducts from "../components/CollectionProducts"
 
-const Collection = ({ pageContext }) => {
+const CollectionTemplate = ({ pageContext }) => {
   const collection = pageContext.collection
 
   try {
@@ -19,4 +19,4 @@ const Collection = ({ pageContext }) => {
   }
 }
 
-export default Collection
+export default CollectionTemplate

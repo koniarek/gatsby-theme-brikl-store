@@ -48,7 +48,9 @@ const FeaturedProducts = ({ products }) => {
           return (
             <Grid item xs={10} sm={6} md={4} lg={4} xl={3} key={product.id}>
               <Link
-                to={"/en/" + getTextFromLanguage(product.slugs, "en_UK")}
+                to={
+                  "/en/products/" + getTextFromLanguage(product.slugs, "en_UK")
+                }
                 style={{ textDecoration: "none" }}
               >
                 <Card

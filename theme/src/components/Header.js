@@ -72,12 +72,37 @@ const Header = ({ languages, defaultLanguage }) => {
   }
 
   const fullList = side => (
-    <Grid container direction="column">
-      <Link>Home</Link>
-      <Link>Products</Link>
-      <Link>Collections</Link>
-      <Link>Teamstores</Link>
-      <Link>Cart</Link>
+    <Grid
+      style={{ textAlign: "center" }}
+      container
+      justify="center"
+      direction="column"
+    >
+      <Link
+        style={{ borderBottom: "1px solid #d4d4d4" }}
+        to={`${lang}/`}
+        className={classes.link}
+      >
+        Home
+      </Link>
+      <Link
+        style={{ borderBottom: "1px solid #d4d4d4" }}
+        to={`${lang}/products`}
+        className={classes.link}
+      >
+        Products
+      </Link>
+      <Link
+        style={{ borderBottom: "1px solid #d4d4d4" }}
+        to={`${lang}/collections`}
+        className={classes.link}
+      >
+        Collections
+      </Link>
+      {/* <Link>Teamstores</Link> */}
+      <Link to={`${lang}/cart`} className={classes.link}>
+        Cart
+      </Link>
     </Grid>
   )
 
@@ -114,7 +139,7 @@ const Header = ({ languages, defaultLanguage }) => {
               languages={languages}
               setLanguage={setLang}
             />
-            <Link className={classes.link}>
+            <Link to={`${lang}/cart`} className={classes.link}>
               <IconButton>
                 <CartIcon style={{ color: "#a6026a" }} />
               </IconButton>

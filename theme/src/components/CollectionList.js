@@ -46,7 +46,10 @@ const CollectionList = ({ collections }) => (
         return (
           <Grid item xs={6} sm={6} md={4} lg={3} xl={3} key={collection.id}>
             <Link
-              to={"/en/" + getTextFromLanguage(collection.slugs, "en_UK")}
+              to={
+                "/en/collections/" +
+                getTextFromLanguage(collection.slugs, "en_UK")
+              }
               style={{ textDecoration: "none" }}
             >
               <Card elevation={0} style={{ border: "0px solid transparent" }}>
