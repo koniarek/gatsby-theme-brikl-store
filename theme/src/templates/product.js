@@ -1,9 +1,9 @@
 import React from "react"
-import Layout from "../components/layout"
-import ImageGallery from "../components/imagegallery"
-import ProductDetails from "../components/productdetails"
+import Layout from "../components/Layout"
+import ImageGallery from "../components/ImageGallery"
+import ProductDetails from "../components/ProductDetails"
 import { Grid } from "@material-ui/core"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 import { getTextFromLanguage } from "../utils/utils"
 
 const ProductTemplate = ({ pageContext }) => {

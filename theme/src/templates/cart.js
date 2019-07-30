@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import { Grid, Typography } from "@material-ui/core"
-import CartProductList from "../components/cartproductlist"
-import SEO from "../components/seo"
+import CartProductList from "../components/CartProductList"
+import SEO from "../components/SEO"
 
 const Cart = ({ pageContext }) => {
   return (
