@@ -6,7 +6,7 @@ jobs:
     working_directory: ~/gatsby-theme-brikl-store/theme
     steps:
       - checkout:
-          path: ~/gatsby-theme-brikl-store
+          path: ~/gatsby-theme-brikl-store/theme
       - restore_cache:
           keys:
             - gatsby-theme-brikl-store-{{ checksum "package.json" }}
@@ -23,7 +23,7 @@ jobs:
     working_directory: ~/gatsby-theme-brikl-store/theme
     steps:
       - checkout:
-          path: ~/gatsby-theme-brikl-store
+          path: ~/gatsby-theme-brikl-store/theme
       - restore_cache:
           keys:
             - gatsby-theme-brikl-store-{{ checksum "package.json" }}
