@@ -16,7 +16,6 @@ const useStyles = makeStyles(theme =>
 
 const Banner = ({ urlPrefix }) => {
   const classes = useStyles()
-
   return (
     <Grid
       container
