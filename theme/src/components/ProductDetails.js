@@ -43,6 +43,7 @@ const ProductDetails = ({ product }) => {
         >
           <Button
             variant="contained"
+            aria-label="Add to cart"
             color="secondary"
             style={{ color: "#ffffff", padding: "10px 25px" }}
           >

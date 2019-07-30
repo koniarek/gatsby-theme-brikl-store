@@ -3,6 +3,11 @@ const fs = require("fs")
 const { buildSchema } = require("graphql")
 
 module.exports = {
+  siteMetadata: {
+    title: "Gatsby Theme BrikL Store",
+    titleTemplate: "%s · Gatsby Theme BrikL Store",
+    description: "A starter template for BrikL storefronts",
+  },
   plugins: [
     {
       resolve: "gatsby-source-graphql",

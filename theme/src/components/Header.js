@@ -146,7 +146,10 @@ const Header = ({ languages, defaultLanguage }) => {
             </Link>
           </Grid>
           <div className={classes.sectionMobile}>
-            <IconButton onClick={toggleDrawer("top", true)}>
+            <IconButton
+              aria-label="Expand menu"
+              onClick={toggleDrawer("top", true)}
+            >
               <MenuIcon style={{ color: "#a6026a" }} />
             </IconButton>
           </div>

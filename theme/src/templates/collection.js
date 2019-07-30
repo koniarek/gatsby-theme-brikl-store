@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from "../components/Layout"
 import CollectionProducts from "../components/CollectionProducts"
+import { getTextFromLanguage } from "../utils/utils"
+import SEO from "../components/SEO"
 
 const CollectionTemplate = ({ pageContext }) => {
   const collection = pageContext.collection
@@ -8,6 +10,7 @@ const CollectionTemplate = ({ pageContext }) => {
   try {
     return (
       <Layout pageContext={pageContext}>
+        <SEO title={`${getTextFromLanguage(collection.title.text, "en_UK")}`} />
         <CollectionProducts
           pageContext={pageContext}
           products={collection.products}
