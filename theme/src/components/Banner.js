@@ -60,7 +60,7 @@ const Banner = ({ urlPrefix }) => {
               component="h2"
               style={{ textAlign: "center", textTransform: "uppercase" }}
             >
-              First Product Bundle are 20% off
+              Get 20% off from your first purchase
             </Typography>
           </Grid>
           <Grid item xs={12}>
