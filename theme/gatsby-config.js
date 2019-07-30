@@ -42,5 +42,20 @@ module.exports = {
     {
       resolve: "gatsby-plugin-react-helmet",
     },
+    {
+      resolve: "gatsby-plugin-html-attributes",
+      options: {
+        lang: "en",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "http://localhost:8000",
+        sitemap: "http://localhost:8000/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+        output: "/robots.txt",
+      },
+    },
   ],
 }

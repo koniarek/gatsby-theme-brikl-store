@@ -82,6 +82,7 @@ const Header = ({ languages, defaultLanguage }) => {
         style={{ borderBottom: "1px solid #d4d4d4" }}
         to={`${lang}/`}
         className={classes.link}
+        aria-label="Home"
       >
         Home
       </Link>
@@ -89,6 +90,7 @@ const Header = ({ languages, defaultLanguage }) => {
         style={{ borderBottom: "1px solid #d4d4d4" }}
         to={`${lang}/products`}
         className={classes.link}
+        aria-label="Products"
       >
         Products
       </Link>
@@ -96,11 +98,12 @@ const Header = ({ languages, defaultLanguage }) => {
         style={{ borderBottom: "1px solid #d4d4d4" }}
         to={`${lang}/collections`}
         className={classes.link}
+        aria-label="Collections"
       >
         Collections
       </Link>
       {/* <Link>Teamstores</Link> */}
-      <Link to={`${lang}/cart`} className={classes.link}>
+      <Link aria-label="Cart" to={`${lang}/cart`} className={classes.link}>
         Cart
       </Link>
     </Grid>
@@ -124,13 +127,21 @@ const Header = ({ languages, defaultLanguage }) => {
 
           <div className={classes.grow} />
           <Grid container justify="flex-end" className={classes.sectionDesktop}>
-            <Link to={`${lang}/`} className={classes.link}>
+            <Link aria-label="Home" to={`${lang}/`} className={classes.link}>
               Home
             </Link>
-            <Link to={`${lang}/products`} className={classes.link}>
+            <Link
+              aria-label="Products"
+              to={`${lang}/products`}
+              className={classes.link}
+            >
               Products
             </Link>
-            <Link to={`${lang}/collections`} className={classes.link}>
+            <Link
+              aria-label="Collections"
+              to={`${lang}/collections`}
+              className={classes.link}
+            >
               Collections
             </Link>
             {/* <Link className={classes.link}>Teamstores</Link> */}
@@ -139,8 +150,12 @@ const Header = ({ languages, defaultLanguage }) => {
               languages={languages}
               setLanguage={setLang}
             />
-            <Link to={`${lang}/cart`} className={classes.link}>
-              <IconButton>
+            <Link
+              aria-label="Cart"
+              to={`${lang}/cart`}
+              className={classes.link}
+            >
+              <IconButton aria-label="Cart">
                 <CartIcon style={{ color: "#a6026a" }} />
               </IconButton>
             </Link>
