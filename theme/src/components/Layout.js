@@ -17,7 +17,7 @@ const Layout = ({ children, pageContext }) => {
 
       <>
         <Header languages={languages} defaultLanguage={urlPrefix} />
-        <div style={{ minHeight: "90vh", overflowY: 'scroll' }}>{children}</div>
+        <div style={{ minHeight: "90vh"}}>{children}</div>
         <Footer />
       </>
     </ThemeProvider>
