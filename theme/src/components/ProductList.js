@@ -36,9 +36,9 @@ const ProductList = ({ products, langCode, urlPrefix }) => {
         />
       </Grid>
       <Grid
-        justify="center"
+        justify="flex-start"
         container
-        spacing={2}
+        spacing={3}
         style={{ padding: "12px 24px" }}
       >
         {products.map(productNode => {

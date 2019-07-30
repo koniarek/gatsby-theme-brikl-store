@@ -36,7 +36,7 @@ const FeaturedProducts = ({ products, urlPrefix, langCode }) => {
         />
       </Grid>
       <Grid
-        justify="flex-start"
+        justify="center"
         container
         spacing={3}
         style={{ padding: "12px 24px" }}
