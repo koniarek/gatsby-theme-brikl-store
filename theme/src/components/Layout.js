@@ -16,11 +16,11 @@ const Layout = ({ children, pageContext }) => {
         <title>Gatsby Theme</title>
       </Helmet>
 
-      <>
+      <div style={{ overflow: "hidden" }}>
         <Header languages={languages} defaultLanguage={urlPrefix} />
         <div style={{ minHeight: "90vh" }}>{children}</div>
         <Footer />
-      </>
+      </div>
     </ThemeProvider>
   )
 }

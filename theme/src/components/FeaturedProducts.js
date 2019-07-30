@@ -41,7 +41,7 @@ const FeaturedProducts = ({ products, urlPrefix, langCode }) => {
         spacing={2}
         style={{ padding: "12px 24px" }}
       >
-        {products.map(productNode => {
+        {products.slice(0, 3).map(productNode => {
           let product = productNode.node
 
           return (

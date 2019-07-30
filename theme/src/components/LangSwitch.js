@@ -1,7 +1,6 @@
 import React from "react"
 
 const LangSwitch = ({ languages, setLanguage, selectedLanguage }) => {
-  console.log(selectedLanguage)
   return (
     <select
       value={selectedLanguage}

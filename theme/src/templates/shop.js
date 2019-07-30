@@ -17,7 +17,7 @@ const ShopTemplate = ({ pageContext }) => {
   return (
     <Layout pageContext={pageContext}>
       <SEO title="Home" />
-      <Banner />
+      <Banner urlPrefix={urlPrefix} />
       <Container maxWidth="lg">
         <FeaturedProducts
           langCode={langCode}
