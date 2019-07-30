@@ -51,10 +51,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "http://localhost:8000",
-        sitemap: "http://localhost:8000/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
-        output: "/robots.txt",
       },
     },
   ],
