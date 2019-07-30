@@ -1,5 +1,24 @@
 version: 2
 jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - gatsby-theme-brikl-store-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - gatsby-theme-brikl-store-
+      - run:
+        name: Navigating to theme directory
+        command: yarn
+      - run: yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: gatsby-theme-brikl-store-{{ checksum "package.json" }}
   release:
     docker:
       - image: circleci/node:latest
