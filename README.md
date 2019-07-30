@@ -36,8 +36,8 @@ To use this theme in your Gatsby sites, follow these instructions:
     ```sh
     GATSBY_BRIKL_API_URI=https://api.mybrikl.com/graphql
     GATSBY_BRIKL_SHOP_ID=gatsby-theme-contest
-    GATSBY_BRIKL_CLIENT_ID=gatsby-theme-contest
-    GATSBY_BRIKL_USER_ID=gatsby-theme-contest-GUESTORG-5AvgvQ7nm
+    GATSBY_BRIKL_CLIENT_ID=ASK-US-FOR-A-CLIENT-ID
+    GATSBY_BRIKL_USER_ID=ASK-US-FOR-YOUR-USER-ID
     ```
 
 4.  Start developing your site or editing the theme
