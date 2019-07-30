@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/Layout"
-import CollectionProducts from "../components/CollectionProducts"
+import Layout from "../components/layout"
+import CollectionProducts from "../components/collectionproduct"
 import { getTextFromLanguage } from "../utils/utils"
-import SEO from "../components/SEO"
+import SEO from "../components/seo"
 
 const CollectionTemplate = ({ pageContext }) => {
   const collection = pageContext.collection

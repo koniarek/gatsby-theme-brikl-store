@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/Layout"
-import CollectionList from "../components/CollectionList"
+import Layout from "../components/layout"
+import CollectionList from "../components/collectionlist"
 import { Container } from "@material-ui/core"
-import SEO from "../components/SEO"
+import SEO from "../components/seo"
 
 const CollectionsTemplate = ({ pageContext }) => {
   const collections = pageContext.shop.collections.edges
