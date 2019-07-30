@@ -108,6 +108,15 @@ const Header = ({ languages, defaultLanguage }) => {
       <Link aria-label="Cart" to={`${lang}/cart`} className={classes.link}>
         Cart
       </Link>
+
+      <LangSwitch
+        selectedLanguage={lang}
+        languages={languages}
+        setLanguage={selectedLang => {
+          setLang(selectedLang)
+          navigate("/" + selectedLang)
+        }}
+      />
     </Grid>
   )
 
