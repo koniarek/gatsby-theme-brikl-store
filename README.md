@@ -1,58 +1,49 @@
-# Gatsby Theme Jam Submission Example
+# Gatsby Theme for BrikL Storefronts
 
-This repo is an example and potential starting point for theme creators.
+A Gatsby theme for building eCommerce storefronts powered by [BrikL](https://www.brikl.io "BrikL")
+A live demo can be found [here](https://determined-lamport-e5f044.netlify.com "demo")
 
 It includes:
-- a bare-bones theme (located in `theme/`) that includes basic setup
+
+- the theme itself (located in `theme/`)
 - a demo site (located in `demo/`) that installs the theme
 - a Yarn workspaces configuration so the theme and demo can be worked on simultaneously
+- a bunch of generated eCommerce pages to get you started
+- multi language support
 
-## How to use this repo
+To use this theme in your Gatsby sites, follow these instructions:
 
-**NOTE:** Make sure to replace `USERNAME` with your GitHub username and `THEMENAME` with your theme name.
+1.  Install the theme
 
-1.  Fork this repo.
-
-2.  Rename the forked repo `gatsby-theme-THEMENAME`. (Make sure to replace `THEMENAME` with your chosen name.)
-
-3.  Get the theme set up locally.
     ```sh
-    # clone the repo
-    git clone git@github.com:USERNAME/gatsby-theme-THEMENAME.git
-
-    # move into the directory
-    cd gatsby-theme-THEMENAME
-
-    # install dependencies
-    yarn
+    yarn add gatsby-theme-brikl-store
     ```
 
-4.  Update `theme/package.json` with your info.
-    ```diff
-      {
-    +   "name": "gatsby-theme-THEMENAME",
-    +   "author": "Your Name <name@example.com>",
-        "repository": {
-          "type": "git",
-    +     "url": "https://github.com/USERNAME/gatsby-theme-THEMENAME.git"
-        },
+    ```sh
+    npm install --save gatsby-theme-brikl-store
     ```
 
-5.  Start the demo site.
+2.  Add the theme to your `gatsby-config.js`:
+
+    ```js
+    module.exports = {
+      plugins: ["gatsby-theme-brikl-store"]
+    };
+    ```
+
+3.  Create a `.env` file in the `theme` or `demo` folder and paste in the following:
+
     ```sh
-    yarn workspace demo develop
+    GATSBY_BRIKL_API_URI=https://api.mybrikl.com/graphql
+    GATSBY_BRIKL_SHOP_ID=gatsby-theme-contest
+    GATSBY_BRIKL_CLIENT_ID=gatsby-theme-contest
+    GATSBY_BRIKL_USER_ID=gatsby-theme-contest-GUESTORG-5AvgvQ7nm
+    ```
+
+4.  Start developing your site or editing the theme
+
+    ```sh
+    gatsby develop
     ```
 
     The demo will start at http://localhost:8000
-
-    **NOTE:** If you’re new to Yarn workspaces, check out [this post](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/) for details.
-
-6.  Start editing the theme! The demo site is configured to use the local theme, so any changes you make to the local `theme` directory will be reflected on the demo site for easy local development.
-
-7.  Follow the [submission checklist](./theme/README.md#submission-checklist) to make sure your theme qualifies to win!
-
-8.  [Submit your theme](https://themejam.gatsbyjs.org/submit) to win!
-
-## More information
-
-For contest rules and more information, see [the Theme Jam website](https://themejam.gatsbyjs.org).
