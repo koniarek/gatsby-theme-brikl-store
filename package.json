@@ -6,5 +6,18 @@
   ],
   "devDependencies": {
     "semantic-release": "15.13.18"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "theme"
+        }
+      ],
+      "@semantic-release/github"
+    ]
   }
 }
