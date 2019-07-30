@@ -15,19 +15,19 @@ const useStyles = makeStyles(theme =>
   })
 )
 
-const ProductDetails = ({ product }) => {
+const ProductDetails = ({ product, langCode }) => {
   const classes = useStyles({})
   try {
     return (
       <Grid style={{ alignSelf: "center" }} container>
         <Grid className={classes.container} container direction="row">
           <Typography style={{ paddingTop: 40 }} variant="h4" color="secondary">
-            {getTextFromLanguage(product.title.text, "en_UK")}
+            {getTextFromLanguage(product.title.text, langCode)}
           </Typography>
         </Grid>
         <Grid className={classes.container} container direction="row">
           <Typography variant="body1">
-            {getTextFromLanguage(product.description.text, "en_UK")}
+            {getTextFromLanguage(product.description.text, langCode)}
           </Typography>
         </Grid>
         <Grid className={classes.container} container direction="row">

@@ -9,8 +9,7 @@ import {
 } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 
-const FeaturedProducts = ({ products }) => {
-  // console.log(products)
+const FeaturedProducts = ({ products, urlPrefix, langCode }) => {
   return (
     <>
       <Grid spacing={2} justify="center" container style={{ padding: 40 }}>
@@ -49,7 +48,8 @@ const FeaturedProducts = ({ products }) => {
             <Grid item xs={10} sm={6} md={4} lg={4} xl={3} key={product.id}>
               <Link
                 to={
-                  "/en/products/" + getTextFromLanguage(product.slugs, "en_UK")
+                  `/${urlPrefix}/products/` +
+                  getTextFromLanguage(product.slugs, langCode)
                 }
                 style={{ textDecoration: "none" }}
               >
@@ -78,7 +78,7 @@ const FeaturedProducts = ({ products }) => {
                         variant="h5"
                         component="h2"
                       >
-                        {getTextFromLanguage(product.title.text, "en_UK")}
+                        {getTextFromLanguage(product.title.text, langCode)}
                       </Typography>
                       <Typography
                         style={{ padding: 5 }}
@@ -86,7 +86,10 @@ const FeaturedProducts = ({ products }) => {
                         color="textSecondary"
                         component="p"
                       >
-                        {getTextFromLanguage(product.description.text, "en_UK")}
+                        {getTextFromLanguage(
+                          product.description.text,
+                          langCode
+                        )}
                       </Typography>
                       <Typography
                         style={{ padding: 5 }}

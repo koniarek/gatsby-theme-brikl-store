@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 
-const CollectionProducts = ({ products, pageContext }) => (
+const CollectionProducts = ({ products, pageContext, urlPrefix, langCode }) => (
   <>
     <Grid spacing={2} justify="center" container style={{ padding: 40 }}>
       <Typography
@@ -20,7 +20,7 @@ const CollectionProducts = ({ products, pageContext }) => (
         component="h2"
         variant="h3"
       >
-        {getTextFromLanguage(pageContext.collection.title.text, "en_UK")}
+        {getTextFromLanguage(pageContext.collection.title.text, langCode)}
       </Typography>
       <Grid
         container
@@ -48,7 +48,10 @@ const CollectionProducts = ({ products, pageContext }) => (
         return (
           <Grid item xs={10} sm={6} md={4} lg={3} xl={3} key={product.id}>
             <Link
-              to={"/en/products/" + getTextFromLanguage(product.slugs, "en_UK")}
+              to={
+                `${urlPrefix}/products/` +
+                getTextFromLanguage(product.slugs, langCode)
+              }
               style={{ textDecoration: "none" }}
             >
               <Card style={{ height: "100%" }}>
@@ -70,7 +73,7 @@ const CollectionProducts = ({ products, pageContext }) => (
                       variant="h5"
                       component="h2"
                     >
-                      {getTextFromLanguage(product.title.text, "en_UK")}
+                      {getTextFromLanguage(product.title.text, langCode)}
                     </Typography>
                     <Typography
                       style={{ padding: 5 }}
@@ -78,7 +81,7 @@ const CollectionProducts = ({ products, pageContext }) => (
                       color="textSecondary"
                       component="p"
                     >
-                      {getTextFromLanguage(product.description.text, "en_UK")}
+                      {getTextFromLanguage(product.description.text, langCode)}
                     </Typography>
                     <Typography
                       style={{ padding: 5 }}

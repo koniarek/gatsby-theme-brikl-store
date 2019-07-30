@@ -5,7 +5,7 @@ import MenuIcon from "@material-ui/icons/Menu"
 import CartIcon from "@material-ui/icons/ShoppingCart"
 import BriklBlack from "../images/BrikLBlack.png"
 import Drawer from "@material-ui/core/Drawer"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import LangSwitch from "./LangSwitch"
 
 const useStyles = makeStyles(theme =>
@@ -58,7 +58,7 @@ const Header = ({ languages, defaultLanguage }) => {
     top: false,
   })
 
-  const [lang, setLang] = useState(defaultLanguage.split("_")[0])
+  const [lang, setLang] = useState(defaultLanguage)
 
   const toggleDrawer = (side, open) => event => {
     if (
@@ -148,7 +148,10 @@ const Header = ({ languages, defaultLanguage }) => {
             <LangSwitch
               selectedLanguage={lang}
               languages={languages}
-              setLanguage={setLang}
+              setLanguage={selectedLang => {
+                setLang(selectedLang)
+                navigate("/" + selectedLang)
+              }}
             />
             <Link
               aria-label="Cart"

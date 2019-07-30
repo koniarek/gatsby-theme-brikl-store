@@ -6,11 +6,19 @@ import SEO from "../components/SEO"
 
 const ProductsTemplate = ({ pageContext }) => {
   const products = pageContext.shop.products.edges
+  console.log(pageContext)
+  let langCode = pageContext.languages
+  let urlPrefix = pageContext.urlPrefix.split("/")[0]
+
   return (
     <Layout pageContext={pageContext}>
       <SEO title="Products" />
       <Container maxWidth="lg">
-        <ProductList products={products} />
+        <ProductList
+          langCode={langCode}
+          urlPrefix={urlPrefix}
+          products={products}
+        />
       </Container>
     </Layout>
   )

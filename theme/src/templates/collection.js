@@ -6,13 +6,19 @@ import SEO from "../components/SEO"
 
 const CollectionTemplate = ({ pageContext }) => {
   const collection = pageContext.collection
+  let langCode = pageContext.languages
+  let urlPrefix = pageContext.urlPrefix.split("/")[0]
 
   try {
     return (
       <Layout pageContext={pageContext}>
-        <SEO title={`${getTextFromLanguage(collection.title.text, "en_UK")}`} />
+        <SEO
+          title={`${getTextFromLanguage(collection.title.text, langCode)}`}
+        />
         <CollectionProducts
           pageContext={pageContext}
+          langCode={langCode}
+          urlPrefix={urlPrefix}
           products={collection.products}
         />
       </Layout>

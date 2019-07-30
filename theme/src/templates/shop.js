@@ -9,14 +9,24 @@ import SEO from "../components/SEO"
 const ShopTemplate = ({ pageContext }) => {
   const products = pageContext.shop.products.edges
   const collections = pageContext.shop.collections.edges
+  let langCode = pageContext.languages
+  let urlPrefix = pageContext.urlPrefix.split("/")[0]
 
   return (
     <Layout pageContext={pageContext}>
       <SEO title="Home" />
       <Banner />
       <Container maxWidth="lg">
-        <FeaturedProducts products={products} />
-        <CollectionList collections={collections} />
+        <FeaturedProducts
+          langCode={langCode}
+          urlPrefix={urlPrefix}
+          products={products}
+        />
+        <CollectionList
+          langCode={langCode}
+          urlPrefix={urlPrefix}
+          collections={collections}
+        />
       </Container>
     </Layout>
   )

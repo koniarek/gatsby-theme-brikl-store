@@ -6,11 +6,18 @@ import SEO from "../components/SEO"
 
 const CollectionsTemplate = ({ pageContext }) => {
   const collections = pageContext.shop.collections.edges
+  let langCode = pageContext.languages
+  let urlPrefix = pageContext.urlPrefix.split("/")[0]
+
   return (
     <Layout pageContext={pageContext}>
       <SEO title="Collections" />
       <Container maxWidth="lg">
-        <CollectionList collections={collections} />
+        <CollectionList
+          langCode={langCode}
+          urlPrefix={urlPrefix}
+          collections={collections}
+        />
       </Container>
     </Layout>
   )
