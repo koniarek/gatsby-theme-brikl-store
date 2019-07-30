@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, langCode, urlPrefix }) => {
   return (
     <>
       <Grid spacing={2} justify="center" container style={{ padding: 40 }}>
@@ -47,7 +47,10 @@ const ProductList = ({ products }) => {
           return (
             <Grid item xs={10} sm={6} md={4} lg={3} xl={3} key={product.id}>
               <Link
-                to={"/en/" + getTextFromLanguage(product.slugs, "en_UK")}
+                to={
+                  `${urlPrefix}/products/` +
+                  getTextFromLanguage(product.slugs, langCode)
+                }
                 style={{ textDecoration: "none" }}
               >
                 <Card
@@ -75,7 +78,7 @@ const ProductList = ({ products }) => {
                         variant="h5"
                         component="h2"
                       >
-                        {getTextFromLanguage(product.title.text, "en_UK")}
+                        {getTextFromLanguage(product.title.text, langCode)}
                       </Typography>
                       <Typography
                         style={{ padding: 5 }}
@@ -83,7 +86,10 @@ const ProductList = ({ products }) => {
                         color="textSecondary"
                         component="p"
                       >
-                        {getTextFromLanguage(product.description.text, "en_UK")}
+                        {getTextFromLanguage(
+                          product.description.text,
+                          langCode
+                        )}
                       </Typography>
                       <Typography
                         style={{ padding: 5 }}

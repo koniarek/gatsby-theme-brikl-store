@@ -150,6 +150,7 @@ exports.createPages = async ({ actions, graphql }) => {
         component: require.resolve("./src/templates/cart.js"),
         context: {
           shop,
+          languages: language,
           urlPrefix,
         },
       })
@@ -160,6 +161,7 @@ exports.createPages = async ({ actions, graphql }) => {
         component: require.resolve("./src/templates/collections.js"),
         context: {
           shop,
+          languages: language,
           urlPrefix,
         },
       })
@@ -170,6 +172,7 @@ exports.createPages = async ({ actions, graphql }) => {
         component: require.resolve("./src/templates/products.js"),
         context: {
           shop,
+          languages: language,
           urlPrefix,
         },
       })
@@ -206,6 +209,7 @@ exports.createPages = async ({ actions, graphql }) => {
                 urlPrefix,
                 shop,
                 productId: product.id,
+                languages: language,
               },
             })
           }
@@ -234,6 +238,7 @@ exports.createPages = async ({ actions, graphql }) => {
                 urlPrefix,
                 shop,
                 collectionId: collection.id,
+                languages: language,
               },
             })
           }
