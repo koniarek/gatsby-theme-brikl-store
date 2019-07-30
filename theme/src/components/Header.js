@@ -30,11 +30,13 @@ const useStyles = makeStyles(theme =>
       },
     },
     link: {
-      color: "#a6026a",
+      // color: "#a6026a",
+      color: '#000',
       textDecoration: "none",
       padding: 20,
+      fontFamily: 'Roboto',
+      fontSize: 16,
       fontWeight: 400,
-      fontFamily: "Arial",
     },
     sectionDesktop: {
       display: "none",
@@ -159,7 +161,7 @@ const Header = ({ languages, defaultLanguage }) => {
               className={classes.link}
             >
               <IconButton aria-label="Cart">
-                <CartIcon style={{ color: "#a6026a" }} />
+                <CartIcon style={{ color: "#000" }} />
               </IconButton>
             </Link>
           </Grid>
@@ -168,7 +170,7 @@ const Header = ({ languages, defaultLanguage }) => {
               aria-label="Expand menu"
               onClick={toggleDrawer("top", true)}
             >
-              <MenuIcon style={{ color: "#a6026a" }} />
+              <MenuIcon style={{ color: "#000" }} />
             </IconButton>
           </div>
           <Drawer

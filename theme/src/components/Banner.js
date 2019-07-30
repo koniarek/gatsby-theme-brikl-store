@@ -3,6 +3,7 @@ import { Grid, Button, Typography } from "@material-ui/core"
 import { createStyles, makeStyles } from "@material-ui/core/styles"
 import Particles from "./Particles"
 import {Link} from 'gatsby'
+import { getTextFromLanguage } from "../utils/utils"
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -14,9 +15,8 @@ const useStyles = makeStyles(theme =>
   })
 )
 
-const Banner = () => {
+const Banner = ({pageContext, urlPrefix, langCode}) => {
   const classes = useStyles()
-
   return (
     <Grid
       container
@@ -48,7 +48,11 @@ const Banner = () => {
         </Grid>
         <Grid item xs={12}>
           <Grid container justify='center'>
-        <Button variant='contained' color='secondary' component={Link} to='/product'>
+        <Button variant='contained' color='secondary' component={Link}
+        to={
+          `${urlPrefix}/products`
+        }
+        >
           Shop Now
         </Button>
         </Grid>

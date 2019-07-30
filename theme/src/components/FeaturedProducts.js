@@ -45,7 +45,7 @@ const FeaturedProducts = ({ products, urlPrefix, langCode }) => {
           let product = productNode.node
 
           return (
-            <Grid item xs={10} sm={6} md={4} lg={3} xl={3} key={product.id}>
+            <Grid item xs={12} sm={6} md={4} lg={3} xl={3} key={product.id}>
               <Link
                 to={
                   `/${urlPrefix}/products/` +
