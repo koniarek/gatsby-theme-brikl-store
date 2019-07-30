@@ -3,10 +3,9 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
-    working_directory: ~/gatsby-theme-brikl-store/theme
+    working_directory: ~/repo/theme
     steps:
-      - checkout:
-          path: ~/gatsby-theme-brikl-store/theme
+      - checkout
       - restore_cache:
           keys:
             - gatsby-theme-brikl-store-{{ checksum "package.json" }}
@@ -20,10 +19,9 @@ jobs:
   release:
     docker:
       - image: circleci/node:latest
-    working_directory: ~/gatsby-theme-brikl-store/theme
+    working_directory: ~/repo/theme
     steps:
-      - checkout:
-          path: ~/gatsby-theme-brikl-store/theme
+      - checkout
       - restore_cache:
           keys:
             - gatsby-theme-brikl-store-{{ checksum "package.json" }}
