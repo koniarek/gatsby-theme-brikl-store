@@ -1,12 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import {
-  Typography,
-  Grid,
-  Card,
-  CardActionArea,
-  CardContent,
-} from "@material-ui/core"
+import { Typography, Grid, Card, CardActionArea } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 
 const CollectionProducts = ({ products, pageContext, urlPrefix, langCode }) => (

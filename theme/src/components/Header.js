@@ -31,10 +31,10 @@ const useStyles = makeStyles(theme =>
     },
     link: {
       // color: "#a6026a",
-      color: '#000',
+      color: "#000",
       textDecoration: "none",
       padding: 20,
-      fontFamily: 'Roboto',
+      fontFamily: "Roboto",
       fontSize: 16,
       fontWeight: 400,
     },
@@ -105,18 +105,25 @@ const Header = ({ languages, defaultLanguage }) => {
         Collections
       </Link>
       {/* <Link>Teamstores</Link> */}
-      <Link aria-label="Cart" to={`${lang}/cart`} className={classes.link}>
+      <Link
+        style={{ borderBottom: "1px solid #d4d4d4" }}
+        aria-label="Cart"
+        to={`${lang}/cart`}
+        className={classes.link}
+      >
         Cart
       </Link>
 
-      <LangSwitch
-        selectedLanguage={lang}
-        languages={languages}
-        setLanguage={selectedLang => {
-          setLang(selectedLang)
-          navigate("/" + selectedLang)
-        }}
-      />
+      <div style={{ alignSelf: "flex-end", padding: 10 }}>
+        <LangSwitch
+          selectedLanguage={lang}
+          languages={languages}
+          setLanguage={selectedLang => {
+            setLang(selectedLang)
+            navigate("/" + selectedLang)
+          }}
+        />
+      </div>
     </Grid>
   )
 
