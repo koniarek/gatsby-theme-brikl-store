@@ -3,15 +3,16 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
-    working_directory: ~/repo/theme
+    working_directory: ~/gatsby-theme-brikl-store/theme
     steps:
-      - checkout
+      - checkout:
+          path: ~/gatsby-theme-brikl-store
       - restore_cache:
           keys:
             - gatsby-theme-brikl-store-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - gatsby-theme-brikl-store-
-      - run: cd theme && yarn
+      - run: yarn
       - save_cache:
           paths:
             - node_modules
@@ -19,12 +20,14 @@ jobs:
   release:
     docker:
       - image: circleci/node:latest
+    working_directory: ~/gatsby-theme-brikl-store/theme
     steps:
-      - checkout
+      - checkout:
+          path: ~/gatsby-theme-brikl-store
       - restore_cache:
           keys:
             - gatsby-theme-brikl-store-{{ checksum "package.json" }}
-      - run: npx semantic-release
+      - run: npm publish
 workflows:
   version: 2
   build_release:
