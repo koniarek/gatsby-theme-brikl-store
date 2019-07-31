@@ -1,51 +1,57 @@
-# Gatsby Theme Jam Example Submission
+# Gatsby Theme for BrikL Storefronts
 
-This is a bare-bones Gatsby theme to showcase how a [Theme Jam](https://themejam.gatsbyjs.org) submission should look.
+A Gatsby theme for building eCommerce storefronts powered by [BrikL](https://www.brikl.io "BrikL")
+A live demo can be found [here](https://gatsby-theme-brikl-demo.netlify.com "demo")
 
-See the [live demo](https://gatsby-theme-jam-example.netlify.com)
+It includes:
 
-## Installation
+- the theme itself (located in `theme/`)
+- a demo site (located in `demo/`) that installs the theme
+- a Yarn workspaces configuration so the theme and demo can be worked on simultaneously
+- a bunch of generated eCommerce pages to get you started
+- multi language support
 
 To use this theme in your Gatsby sites, follow these instructions:
 
 1.  Install the theme
+
     ```sh
-    npm install --save gatsby-theme-jam-example
+    yarn add @brikl/gatsby-theme-brikl-store
+    ```
+
+    ```sh
+    npm install --save @brikl/gatsby-theme-brikl-store
     ```
 
 2.  Add the theme to your `gatsby-config.js`:
+
     ```js
     module.exports = {
       plugins: [
-        'gatsby-theme-jam-example'
-      ]
+        {
+          resolve: `@brikl/gatsby-theme-brikl-store`,
+          options: {
+            clientId: process.env.GATSBY_BRIKL_CLIENT_ID,
+            shopId: process.env.GATSBY_BRIKL_SHOP_ID,
+            userId: process.env.GATSBY_BRIKL_USER_ID,
+          },
+        },
+      ],
     }
     ```
 
-3.  Start your site
+3.  Create a `.env` file in the `theme` or `demo` folder or pass environment variables to the build like below:
+
+    ```sh
+    GATSBY_BRIKL_SHOP_ID=gatsby-theme-contest
+    GATSBY_BRIKL_CLIENT_ID=ASK-US-FOR-A-CLIENT-ID
+    GATSBY_BRIKL_USER_ID=ASK-US-FOR-YOUR-USER-ID
+    ```
+
+4.  Start developing your site or editing the theme
+
     ```sh
     gatsby develop
     ```
 
-## Submission Checklist
-
-To ensure your Theme Jam submission [follows the rules](https://themejam.gatsbyjs.org/rules), use this checklist:
-
-- [ ] Use our [accessibility guide][a11y] to ensure your site meets our accessibility standards
-- [ ] Run a performance audit using [Lighthouse][] and/or [WebPageTest][]
-- [ ] Set up a live demo using [Netlify][] or [GitHub Pages][]
-- [ ] Add installation documentation to the README
-- [ ] Update the `name` field in `package.json`
-- [ ] Update the `author` field in `package.json`
-- [ ] Update the `repository` field in `package.json`
-- [ ] Make sure the theme’s `keywords` in `package.json` include `gatsby`, `gatsby-theme`, and `gatsby-plugin`
-- [ ] Publish your theme to npm ([docs][npmpublish])
-- [ ] Submit your theme at https://themejam.gatsbyjs.org
-
-[a11y]: https://gatsbyjs.org/docs/making-your-site-accessible#how-to-improve-accessibility
-[Lighthouse]: https://developers.google.com/web/tools/lighthouse/
-[axe]: https://www.deque.com/axe/
-[WebPageTest]: http://webpagetest.org/
-[Netlify]: https://netlify.com
-[GitHub Pages]: https://pages.github.com/
-[npmpublish]: https://docs.npmjs.com/cli/publish
+    The demo will start at http://localhost:8000

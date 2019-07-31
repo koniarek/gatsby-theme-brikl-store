@@ -16,25 +16,33 @@ To use this theme in your Gatsby sites, follow these instructions:
 1.  Install the theme
 
     ```sh
-    yarn add gatsby-theme-brikl-store
+    yarn add @brikl/gatsby-theme-brikl-store
     ```
 
     ```sh
-    npm install --save gatsby-theme-brikl-store
+    npm install --save @brikl/gatsby-theme-brikl-store
     ```
 
 2.  Add the theme to your `gatsby-config.js`:
 
     ```js
     module.exports = {
-      plugins: ["gatsby-theme-brikl-store"]
+      plugins: [
+        {
+          resolve: `@brikl/gatsby-theme-brikl-store`,
+          options: {
+            clientId: process.env.GATSBY_BRIKL_CLIENT_ID,
+            shopId: process.env.GATSBY_BRIKL_SHOP_ID,
+            userId: process.env.GATSBY_BRIKL_USER_ID
+          }
+        }
+      ]
     };
     ```
 
-3.  Create a `.env` file in the `theme` or `demo` folder and paste in the following:
+3.  Create a `.env` file in the `theme` or `demo` folder or pass environment variables to the build like below:
 
     ```sh
-    GATSBY_BRIKL_API_URI=https://api.mybrikl.com/graphql
     GATSBY_BRIKL_SHOP_ID=gatsby-theme-contest
     GATSBY_BRIKL_CLIENT_ID=ASK-US-FOR-A-CLIENT-ID
     GATSBY_BRIKL_USER_ID=ASK-US-FOR-YOUR-USER-ID

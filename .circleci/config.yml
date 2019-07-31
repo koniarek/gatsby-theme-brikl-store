@@ -25,6 +25,9 @@ jobs:
       - restore_cache:
           keys:
             - gatsby-theme-brikl-store-{{ checksum "package.json" }}
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/theme/.npmrc
       - run: npm publish
 workflows:
   version: 2
