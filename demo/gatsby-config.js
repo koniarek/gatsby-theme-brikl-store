@@ -5,5 +5,14 @@
  */
 
 module.exports = {
-  plugins: ["gatsby-theme-brikl-store"],
+  plugins: [
+    {
+      resolve: `@brikl/gatsby-theme-brikl-store`,
+      options: {
+        clientId: process.env.GATSBY_BRIKL_CLIENT_ID,
+        shopId: process.env.GATSBY_BRIKL_SHOP_ID,
+        userId: process.env.GATSBY_BRIKL_USER_ID,
+      },
+    },
+  ],
 }
