@@ -104,7 +104,14 @@ const Header = ({ languages, defaultLanguage }) => {
       >
         Collections
       </Link>
-      {/* <Link>Teamstores</Link> */}
+      <Link
+        style={{ borderBottom: "1px solid #d4d4d4" }}
+        to={`${lang}/teamstores`}
+        className={classes.link}
+        aria-label="Teamstores"
+      >
+        Teamstores
+      </Link>
       <Link
         style={{ borderBottom: "1px solid #d4d4d4" }}
         aria-label="Cart"
@@ -162,7 +169,13 @@ const Header = ({ languages, defaultLanguage }) => {
             >
               Collections
             </Link>
-            {/* <Link className={classes.link}>Teamstores</Link> */}
+            <Link
+              to={`${lang}/teamstores`}
+              className={classes.link}
+              aria-label="Teamstores"
+            >
+              Teamstores
+            </Link>
             <LangSwitch
               selectedLanguage={lang}
               languages={languages}

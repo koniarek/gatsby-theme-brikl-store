@@ -18,6 +18,25 @@ exports.createPages = async ({ actions, graphql }, themeOptions) => {
             edges {
               node {
                 id
+                logo
+                introductionText {
+                  id
+                  text {
+                    content
+                    langCode
+                  }
+                }
+                title {
+                  id
+                  text {
+                    content
+                    langCode
+                  }
+                }
+                slugs {
+                  content
+                  langCode
+                }
                 products {
                   edges {
                     node {
@@ -226,6 +245,17 @@ exports.createPages = async ({ actions, graphql }, themeOptions) => {
           },
         })
 
+        // all teamstores page
+        actions.createPage({
+          path: basePath + urlPrefix + "teamstores",
+          component: require.resolve("./src/templates/teamstores.js"),
+          context: {
+            shop,
+            languages: language,
+            urlPrefix,
+          },
+        })
+
         // all products page
         actions.createPage({
           path: basePath + urlPrefix + "products",
@@ -245,6 +275,35 @@ exports.createPages = async ({ actions, graphql }, themeOptions) => {
             languages: language,
             urlPrefix,
           },
+        })
+
+        const teamstores = shop.salesChannels.edges
+
+        // generate teamstore pages
+        teamstores.forEach(teamstoreNode => {
+          const teamstore = teamstoreNode.node
+          if (teamstore.slugs) {
+            if (
+              teamstore.slugs &&
+              teamstore.slugs.find(e => e.langCode === language)
+            ) {
+              actions.createPage({
+                path: `/${urlPrefix}teamstore/${
+                  teamstore.slugs.find(e => e.langCode === language).content
+                }`,
+                component: require.resolve("./src/templates/teamstore.js"),
+                context: {
+                  langCode: language,
+                  slugs: teamstore.slugs,
+                  teamstore: teamstore,
+                  urlPrefix,
+                  shop,
+                  teamstoreId: teamstore.id,
+                  languages: language,
+                },
+              })
+            }
+          }
         })
 
         const products = shop.products.edges

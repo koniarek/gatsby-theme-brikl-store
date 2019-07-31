@@ -3,14 +3,23 @@ import { getTextFromLanguage } from "../utils/utils"
 import { Link } from "gatsby"
 import { Typography, Grid, Card, CardActionArea } from "@material-ui/core"
 
-const Product = ({ product, langCode, urlPrefix }) => {
+const Product = ({
+  product,
+  langCode,
+  urlPrefix,
+  isTeamstore,
+  teamstoreName,
+}) => {
   return (
     <>
       <Grid item xs={12} sm={6} md={4} lg={3} xl={3} key={product.id}>
         <Link
           to={
-            `${urlPrefix}/products/` +
-            getTextFromLanguage(product.slugs, langCode)
+            isTeamstore
+              ? `${urlPrefix}/teamstore/${teamstoreName}/products/` +
+                getTextFromLanguage(product.slugs, langCode)
+              : `${urlPrefix}/products/` +
+                getTextFromLanguage(product.slugs, langCode)
           }
           style={{ textDecoration: "none" }}
         >
