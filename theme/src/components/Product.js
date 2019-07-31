@@ -7,7 +7,8 @@ const Product = ({ product, langCode, urlPrefix }) => {
   return (
     <>
       <Grid
-        justify="flex-start"
+        justify="center"
+        direction="row"
         container
         spacing={3}
         style={{ padding: "12px 24px" }}

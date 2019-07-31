@@ -7,11 +7,9 @@ const NewProduct = ({ product, langCode, urlPrefix }) => {
   return (
     <>
       {/* Uncomment to use default style */}
-      {/* <Product product={product} langCode={langCode} urlPrefix={urlPrefix} /> */}
-      <h1>product name: {getTextFromLanguage(product.title.text, langCode)}</h1>
-      <h5>
-        description: {getTextFromLanguage(product.description.text, langCode)}
-      </h5>
+      <Product product={product} langCode={langCode} urlPrefix={urlPrefix} />
+      {/* <h1>{getTextFromLanguage(product.title.text, langCode)}</h1>
+      <h5>{getTextFromLanguage(product.description.text, langCode)}</h5>
       <h3>
         price: ${product.price.value} {product.price.currency}
       </h3>
@@ -22,7 +20,7 @@ const NewProduct = ({ product, langCode, urlPrefix }) => {
         }
       >
         Details
-      </Link>
+      </Link> */}
     </>
   )
 }
