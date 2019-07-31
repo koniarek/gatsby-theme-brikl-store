@@ -129,7 +129,7 @@ const Header = ({ languages, defaultLanguage }) => {
 
   return (
     <div className={classes.grow}>
-      <AppBar elevation={0} position="static" color="primary">
+      <AppBar elevation={0} position="static" color="#fff">
         <Toolbar style={{ padding: 8 }}>
           <Link to={`${lang}/`}>
             <img

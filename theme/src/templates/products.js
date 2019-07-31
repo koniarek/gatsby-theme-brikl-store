@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import ProductList from "../components/ProductList"
 import { Container } from "@material-ui/core"
 import SEO from "../components/SEO"
+import PageTitle from "../components/PageTitle"
 
 const ProductsTemplate = ({ pageContext }) => {
   const products = pageContext.shop.products.edges
@@ -12,6 +13,7 @@ const ProductsTemplate = ({ pageContext }) => {
   return (
     <Layout pageContext={pageContext}>
       <SEO title="Products" />
+      <PageTitle title="Products" />
       <Container maxWidth="lg">
         <ProductList
           langCode={langCode}

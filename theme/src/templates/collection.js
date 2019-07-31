@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import CollectionProducts from "../components/CollectionProduct"
 import { getTextFromLanguage } from "../utils/utils"
 import SEO from "../components/SEO"
+import PageTitle from "../components/PageTitle"
 
 const CollectionTemplate = ({ pageContext }) => {
   const collection = pageContext.collection
@@ -13,6 +14,9 @@ const CollectionTemplate = ({ pageContext }) => {
     return (
       <Layout pageContext={pageContext}>
         <SEO
+          title={`${getTextFromLanguage(collection.title.text, langCode)}`}
+        />
+        <PageTitle
           title={`${getTextFromLanguage(collection.title.text, langCode)}`}
         />
         <CollectionProducts

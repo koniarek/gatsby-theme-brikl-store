@@ -1,10 +1,11 @@
 import React from "react"
 import Layout from "../components/Layout"
 import FeaturedProducts from "../components/FeaturedProducts"
-import Banner from "../components/Banner"
+import BannerContainer from "../components/BannerContainer"
 import { Container } from "@material-ui/core"
 import CollectionList from "../components/CollectionList"
 import SEO from "../components/SEO"
+import PageTitle from "../components/PageTitle"
 
 const ShopTemplate = ({ pageContext }) => {
   const products = pageContext.shop.products.edges
@@ -17,13 +18,15 @@ const ShopTemplate = ({ pageContext }) => {
   return (
     <Layout pageContext={pageContext}>
       <SEO title="Home" />
-      <Banner urlPrefix={urlPrefix} />
+      <BannerContainer urlPrefix={urlPrefix} />
       <Container maxWidth="lg">
+        <PageTitle title="Featured" />
         <FeaturedProducts
           langCode={langCode}
           urlPrefix={urlPrefix}
           products={products}
         />
+        <PageTitle title="Collections" />
         <CollectionList
           langCode={langCode}
           urlPrefix={urlPrefix}

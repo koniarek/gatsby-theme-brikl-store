@@ -14,7 +14,14 @@ const useStyles = makeStyles(theme =>
   })
 )
 
-const Banner = ({ urlPrefix }) => {
+const Banner = ({
+  urlPrefix,
+  title,
+  subTitle,
+  button,
+  particles,
+  backgroundColor,
+}) => {
   const classes = useStyles()
   return (
     <Grid
@@ -23,6 +30,7 @@ const Banner = ({ urlPrefix }) => {
       style={{
         height: "70vh",
         position: "relative",
+        backgroundColor: particles ? "transparent" : backgroundColor,
       }}
       justify={"center"}
       alignItems={"center"}
@@ -51,7 +59,7 @@ const Banner = ({ urlPrefix }) => {
               component="h1"
               style={{ textAlign: "center", textTransform: "uppercase" }}
             >
-              Designed with Teams in mind
+              {title}
             </Typography>
           </Grid>
           <Grid item xs={12}>
@@ -60,7 +68,7 @@ const Banner = ({ urlPrefix }) => {
               component="h2"
               style={{ textAlign: "center", textTransform: "uppercase" }}
             >
-              Get 20% off from your first purchase
+              {subTitle}
             </Typography>
           </Grid>
           <Grid item xs={12}>
@@ -71,13 +79,13 @@ const Banner = ({ urlPrefix }) => {
                 component={Link}
                 to={`${urlPrefix}/products`}
               >
-                Shop Now
+                {button}
               </Button>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
-      <Particles />
+      {particles ? <Particles /> : null}
     </Grid>
   )
 }

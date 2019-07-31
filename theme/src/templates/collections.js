@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import CollectionList from "../components/CollectionList"
 import { Container } from "@material-ui/core"
 import SEO from "../components/SEO"
+import PageTitle from "../components/PageTitle"
 
 const CollectionsTemplate = ({ pageContext }) => {
   const collections = pageContext.shop.collections.edges
@@ -12,6 +13,7 @@ const CollectionsTemplate = ({ pageContext }) => {
   return (
     <Layout pageContext={pageContext}>
       <SEO title="Collections" />
+      <PageTitle title="Collections" />
       <Container maxWidth="lg">
         <CollectionList
           langCode={langCode}

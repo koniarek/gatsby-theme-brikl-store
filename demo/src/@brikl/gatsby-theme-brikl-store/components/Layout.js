@@ -1,8 +1,8 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { ThemeProvider } from "@material-ui/styles"
-import { theme } from "./Theme"
-import Header from "./Header"
+import { theme } from "@brikl/gatsby-theme-brikl-store/src/components/Theme"
+import Header from "@brikl/gatsby-theme-brikl-store/src/components/Header"
 
 const Layout = ({ children, pageContext }) => {
   let languages = pageContext.shop.languages
