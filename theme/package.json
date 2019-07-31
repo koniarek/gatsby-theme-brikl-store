@@ -9,7 +9,7 @@
     "Patrik Molnar <info@patrikmolnar.com>",
     "Tobias Meixner <meixner.tobias@gmail.com>"
   ],
-  "version": "0.0.1",
+  "version": "0.0.4",
   "main": "index.js",
   "scripts": {
     "build": "gatsby build",

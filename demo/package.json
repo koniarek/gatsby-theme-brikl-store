@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "gatsby": "^2.13.3",
-    "gatsby-theme-brikl-store": "*",
+    "@brikl/gatsby-theme-brikl-store": "*",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
