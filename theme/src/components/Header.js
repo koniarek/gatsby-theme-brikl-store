@@ -61,9 +61,14 @@ const Header = ({ languages, defaultLanguage }) => {
     top: false,
   })
 
-  const windowGlobal = typeof window !== "undefined" && window
-
-  let storage = windowGlobal.localStorage.getItem("cart")
+  let storage = null
+  try {
+    if (window !== undefined) {
+      storage = window.localStorage.getItem("cart")
+    }
+  } catch (error) {
+    console.log(error)
+  }
   let cart = storage ? JSON.parse(storage) : []
 
   const [lang, setLang] = useState(defaultLanguage)
