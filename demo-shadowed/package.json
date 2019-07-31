@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "demo-shadowed",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "yarn && gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.3.0",
+    "@material-ui/styles": "^4.3.0",
+    "gatsby": "^2.13.3",
+    "@brikl/gatsby-theme-brikl-store": "*",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}

@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": [
     "theme",
-    "demo"
+    "demo",
+    "demo-shadowed"
   ],
   "devDependencies": {
     "semantic-release": "15.13.18"

@@ -15,7 +15,7 @@ const Collection = ({ collection, urlPrefix, langCode }) => (
       <Link
         to={
           `/${urlPrefix}/collections/` +
-          getTextFromLanguage(collection.slugs, "en_UK")
+          getTextFromLanguage(collection.slugs, langCode)
         }
         style={{ textDecoration: "none" }}
       >
