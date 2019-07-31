@@ -34,7 +34,7 @@ module.exports = themeOptions => {
             // HTTP headers
             headers: {
               // Learn about environment variables: https://gatsby.dev/env-vars
-              Authorization: clientId,
+              Authorization: userId,
               "x-brikl-shop-id": shopId,
               "x-brikl-client-id": clientId,
             },
