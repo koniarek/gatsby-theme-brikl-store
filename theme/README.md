@@ -16,11 +16,11 @@ To use this theme in your Gatsby sites, follow these instructions:
 1.  Install the theme
 
     ```sh
-    yarn add gatsby-theme-brikl-store
+    yarn add @brikl/gatsby-theme-brikl-store
     ```
 
     ```sh
-    npm install --save gatsby-theme-brikl-store
+    npm install --save @brikl/gatsby-theme-brikl-store
     ```
 
 2.  Add the theme to your `gatsby-config.js`:
