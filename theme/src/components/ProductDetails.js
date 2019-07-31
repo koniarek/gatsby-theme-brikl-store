@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Grid, Typography, Button } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 import { createStyles, makeStyles } from "@material-ui/core/styles"
@@ -16,6 +16,24 @@ const useStyles = makeStyles(theme =>
 )
 
 const ProductDetails = ({ product, langCode }) => {
+  const [cartItems, setCartItems] = useState([])
+  const [qty, setQty] = useState(1)
+
+  const addToCart = item => {
+    let items = cartItems
+    if (localStorage.getItem("cart")) {
+      items = JSON.parse(localStorage.getItem("cart"))
+    }
+    let existing = items.find(i => i.id === item.id)
+    if (existing) {
+      existing.qty = item.qty
+      existing.name = item.name
+    } else {
+      items.push(item)
+      localStorage.setItem("cart", JSON.stringify(items))
+    }
+  }
+
   const classes = useStyles({})
   try {
     return (
@@ -41,11 +59,31 @@ const ProductDetails = ({ product, langCode }) => {
           container
           direction="row"
         >
+          <select
+            value={qty}
+            onChange={e => setQty(e.target.value)}
+            aria-label="quantity"
+          >
+            <option value={1} label="1" />
+            <option value={2} label="2" />
+            <option value={3} label="3" />
+            <option value={4} label="4" />
+          </select>
           <Button
             variant="contained"
             aria-label="Add to cart"
             color="secondary"
             style={{ color: "#ffffff", padding: "10px 25px" }}
+            onClick={() =>
+              addToCart({
+                id: product.id,
+                name: getTextFromLanguage(product.title.text, langCode),
+                price: product.price.value,
+                qty: qty,
+                thumbnail: product.media[0].image,
+                currency: product.price.currency,
+              })
+            }
           >
             Add to cart
             <CartIcon className={classes.rightIcon} />

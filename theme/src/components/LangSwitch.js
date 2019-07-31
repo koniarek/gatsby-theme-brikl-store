@@ -11,7 +11,6 @@ const useStyles = makeStyles(theme =>
   })
 )
 const LangSwitch = ({ languages, setLanguage, selectedLanguage }) => {
-  console.log(selectedLanguage)
   const classes = useStyles()
 
   return (

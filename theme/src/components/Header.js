@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { makeStyles, createStyles } from "@material-ui/core/styles"
 import { AppBar, Toolbar, IconButton, Grid } from "@material-ui/core"
 import MenuIcon from "@material-ui/icons/Menu"
@@ -7,6 +7,7 @@ import BriklBlack from "../images/BrikLBlack.png"
 import Drawer from "@material-ui/core/Drawer"
 import { Link, navigate } from "gatsby"
 import LangSwitch from "./LangSwitch"
+import Badge from "@material-ui/core/Badge"
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -59,6 +60,9 @@ const Header = ({ languages, defaultLanguage }) => {
   const [state, setState] = useState({
     top: false,
   })
+
+  let storage = localStorage.getItem("cart")
+  let cart = storage ? JSON.parse(storage) : []
 
   const [lang, setLang] = useState(defaultLanguage)
 
@@ -190,7 +194,13 @@ const Header = ({ languages, defaultLanguage }) => {
               className={classes.link}
             >
               <IconButton aria-label="Cart">
-                <CartIcon style={{ color: "#000" }} />
+                <Badge
+                  className={classes.margin}
+                  badgeContent={cart.length}
+                  color="secondary"
+                >
+                  <CartIcon style={{ color: "#000" }} />
+                </Badge>
               </IconButton>
             </Link>
           </Grid>
