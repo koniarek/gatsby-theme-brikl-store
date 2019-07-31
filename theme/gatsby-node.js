@@ -10,6 +10,54 @@ exports.createPages = async ({ actions, graphql }) => {
           defaultCurrency
           defaultLanguage
           name
+          salesChannels {
+            edges {
+              node {
+                id
+                products {
+                  edges {
+                    node {
+                      product {
+                        id
+                        inventory
+                        no
+                        media{
+                          id
+                          image
+                          sortOrder
+                        }
+                        price {
+                          currency
+                          value
+                          taxPercent
+                          includesTax
+                        }
+                        slugs {
+                          content
+                          langCode
+                        }
+                        status
+                        description {
+                          id
+                          text {
+                            content
+                            langCode
+                          }
+                        }
+                        title {
+                          id
+                          text {
+                            content
+                            langCode
+                          }
+                        }
+                      }                      
+                    }
+                  }
+                }
+              }
+            }
+          }
           collections {
             edges {
               node {
