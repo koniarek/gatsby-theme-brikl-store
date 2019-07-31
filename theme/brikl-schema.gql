@@ -18,11 +18,7 @@ type Shop {
     first: Int
     query: String
   ): ShopProductConnection!
-  # productPackages(
-  #   filter: ProductFilter
-  #   shopId: ID!
-  #   first: Int
-  # ): ShopProductPackageConnection!
+  salesChannels(first: Int): SalesChannelConnection!
   brandSettings: ShopBrandSettings
   currencies: [Currency]
   collections(first: Int, query: String): ShopCollectionConnection!
@@ -30,6 +26,46 @@ type Shop {
   defaultCurrency: Currency
   languages: [LanguageCode]
   languageWithoutUrlPrefix: LanguageCode
+}
+type SalesChannelConnection {
+  pageInfo: PageInfo!
+  edges: [SalesChannelEdge!]
+}
+
+type SalesChannelEdge {
+  cursor: String!
+  node: SalesChannel
+}
+type SalesChannel {
+  id: ID
+  name: String
+  title: Text
+  logo: CDNImage
+  mainBanner: CDNImage
+  availableFrom: Timestamp
+  availableUntil: Timestamp
+  slugs: [SlugLocalised]
+  introductionText: Text
+  brandColor: String
+  contactPerson: String
+  products(
+    first: Int
+    after: String
+    last: Int
+    before: String
+  ): SalesChannelProductConnection
+}
+type SalesChannelProductConnection {
+  pageInfo: PageInfo!
+  edges: [SalesChannelProductEdge!]
+}
+type SalesChannelProductEdge {
+  cursor: String!
+  node: SalesChannelProduct
+}
+type SalesChannelProduct {
+  id: ID
+  product: Product
 }
 
 type ShopProductConnection {
