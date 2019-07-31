@@ -1,9 +1,12 @@
 exports.createPages = async ({ actions, graphql }, themeOptions) => {
-  console.log("themeOptions", themeOptions)
+  const shopId =
+    themeOptions && themeOptions.shopId
+      ? themeOptions.shopId
+      : process.env.GATSBY_BRIKL_SHOP_ID
   const result = await graphql(`
     query {
       brikl {
-        shop(id: "${themeOptions.shopId}"){
+        shop(id: "${shopId}"){
           id
           languages
           languageWithoutUrlPrefix
@@ -130,7 +133,7 @@ exports.createPages = async ({ actions, graphql }, themeOptions) => {
               }
             }
           }
-          products(shopId:"${themeOptions.shopId}"){
+          products(shopId:"${shopId}"){
             edges {
               node {
                 id
