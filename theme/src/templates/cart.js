@@ -11,7 +11,9 @@ import TableRow from "@material-ui/core/TableRow"
 import Paper from "@material-ui/core/Paper"
 
 const Cart = ({ pageContext }) => {
-  let storage = window.localStorage.getItem("cart")
+  const windowGlobal = typeof window !== "undefined" && window
+
+  let storage = windowGlobal.localStorage.getItem("cart")
   let cartItems = storage ? JSON.parse(storage) : ""
 
   return (

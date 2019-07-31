@@ -19,10 +19,12 @@ const ProductDetails = ({ product, langCode }) => {
   const [cartItems, setCartItems] = useState([])
   const [qty, setQty] = useState(1)
 
+  const windowGlobal = typeof window !== "undefined" && window
+
   const addToCart = item => {
     let items = cartItems
-    if (window.localStorage.getItem("cart")) {
-      items = JSON.parse(window.localStorage.getItem("cart"))
+    if (windowGlobal.localStorage.getItem("cart")) {
+      items = JSON.parse(windowGlobal.localStorage.getItem("cart"))
     }
     let existing = items.find(i => i.id === item.id)
     if (existing) {
@@ -30,7 +32,7 @@ const ProductDetails = ({ product, langCode }) => {
       existing.name = item.name
     } else {
       items.push(item)
-      window.localStorage.setItem("cart", JSON.stringify(items))
+      windowGlobal.localStorage.setItem("cart", JSON.stringify(items))
     }
   }
 
