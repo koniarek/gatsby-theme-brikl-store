@@ -10,18 +10,9 @@ import TableHead from "@material-ui/core/TableHead"
 import TableRow from "@material-ui/core/TableRow"
 import Paper from "@material-ui/core/Paper"
 
-import { getTextFromLanguage } from "../utils/utils"
-
 const Cart = ({ pageContext }) => {
-  let products = pageContext.shop.products.edges
-  let langCode = pageContext.languages
-
-  let storage = localStorage.getItem("cart")
+  let storage = window.localStorage.getItem("cart")
   let cartItems = storage ? JSON.parse(storage) : ""
-
-  console.log(cartItems)
-
-  console.log(pageContext)
 
   return (
     <Layout pageContext={pageContext}>

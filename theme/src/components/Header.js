@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { makeStyles, createStyles } from "@material-ui/core/styles"
 import { AppBar, Toolbar, IconButton, Grid } from "@material-ui/core"
 import MenuIcon from "@material-ui/icons/Menu"
@@ -61,7 +61,7 @@ const Header = ({ languages, defaultLanguage }) => {
     top: false,
   })
 
-  let storage = localStorage.getItem("cart")
+  let storage = window.localStorage.getItem("cart")
   let cart = storage ? JSON.parse(storage) : []
 
   const [lang, setLang] = useState(defaultLanguage)

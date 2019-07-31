@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { Grid, Typography, Button } from "@material-ui/core"
 import { getTextFromLanguage } from "../utils/utils"
 import { createStyles, makeStyles } from "@material-ui/core/styles"
@@ -21,8 +21,8 @@ const ProductDetails = ({ product, langCode }) => {
 
   const addToCart = item => {
     let items = cartItems
-    if (localStorage.getItem("cart")) {
-      items = JSON.parse(localStorage.getItem("cart"))
+    if (window.localStorage.getItem("cart")) {
+      items = JSON.parse(window.localStorage.getItem("cart"))
     }
     let existing = items.find(i => i.id === item.id)
     if (existing) {
@@ -30,7 +30,7 @@ const ProductDetails = ({ product, langCode }) => {
       existing.name = item.name
     } else {
       items.push(item)
-      localStorage.setItem("cart", JSON.stringify(items))
+      window.localStorage.setItem("cart", JSON.stringify(items))
     }
   }
 
