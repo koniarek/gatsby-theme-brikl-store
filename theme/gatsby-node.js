@@ -206,14 +206,8 @@ exports.createPages = async ({ actions, graphql }, themeOptions) => {
       component: require.resolve("./src/templates/shop.js"),
       context: {
         shop,
+        urlPrefix: defaultLanguage,
       },
-    })
-
-    actions.createRedirect({
-      fromPath: `/`,
-      toPath: `/en`,
-      redirectInBrowser: true,
-      isPermanent: true,
     })
 
     try {

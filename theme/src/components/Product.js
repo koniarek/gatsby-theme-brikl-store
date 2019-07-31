@@ -16,7 +16,7 @@ const Product = ({
         <Link
           to={
             isTeamstore
-              ? `${urlPrefix}/teamstore/${teamstoreName}/products/` +
+              ? `${urlPrefix}/products/` +
                 getTextFromLanguage(product.slugs, langCode)
               : `${urlPrefix}/products/` +
                 getTextFromLanguage(product.slugs, langCode)

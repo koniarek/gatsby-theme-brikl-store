@@ -10,10 +10,8 @@ import PageTitle from "../components/PageTitle"
 const ShopTemplate = ({ pageContext }) => {
   const products = pageContext.shop.products.edges
   const collections = pageContext.shop.collections.edges
-  let langCode = pageContext.languages
+  let langCode = pageContext.languages || "en_UK"
   let urlPrefix = pageContext.urlPrefix
-    ? pageContext.urlPrefix.split("/")[0]
-    : "en"
 
   return (
     <Layout pageContext={pageContext}>
