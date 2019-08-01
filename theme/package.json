@@ -14,7 +14,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "yarn && gatsby develop",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "npm-publish": "cp ../README.md . && npm publish"
   },
   "license": "MIT",
   "peerDependencies": {

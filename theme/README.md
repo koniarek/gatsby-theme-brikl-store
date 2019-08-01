@@ -33,11 +33,11 @@ To use this theme in your Gatsby sites, follow these instructions:
           options: {
             clientId: process.env.GATSBY_BRIKL_CLIENT_ID,
             shopId: process.env.GATSBY_BRIKL_SHOP_ID,
-            userId: process.env.GATSBY_BRIKL_USER_ID,
-          },
-        },
-      ],
-    }
+            userId: process.env.GATSBY_BRIKL_USER_ID
+          }
+        }
+      ]
+    };
     ```
 
 3.  Create a `.env` file in the `theme` or `demo` folder or pass environment variables to the build like below:
