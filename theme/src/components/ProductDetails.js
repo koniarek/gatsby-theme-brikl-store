@@ -69,6 +69,13 @@ const ProductDetails = ({ product, langCode }) => {
             value={qty}
             onChange={e => setQty(e.target.value)}
             aria-label="quantity"
+            style={{
+              WebkitAppearance: "none",
+              MozAppearance: "none",
+              appearance: "none",
+              padding: "10px 30px",
+              borderRadius: 7,
+            }}
           >
             <option value={1} label="1" />
             <option value={2} label="2" />
@@ -79,7 +86,7 @@ const ProductDetails = ({ product, langCode }) => {
             variant="contained"
             aria-label="Add to cart"
             color="secondary"
-            style={{ color: "#ffffff", padding: "10px 25px" }}
+            style={{ color: "#ffffff", padding: "10px 25px", marginLeft: 10 }}
             onClick={() =>
               addToCart({
                 id: product.id,
