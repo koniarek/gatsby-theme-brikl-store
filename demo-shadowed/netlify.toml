@@ -1,4 +1,0 @@
-[build]
-  base="demo-shadowed"
-  command = "yarn build"
-  publish = "demo-shadowed/public"
