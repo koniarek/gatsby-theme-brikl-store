@@ -1,6 +1,7 @@
 # Gatsby Theme for BrikL Storefronts
 
 A Gatsby theme for building eCommerce storefronts powered by [BrikL](https://www.brikl.io "BrikL")
+
 A live demo can be found [here](https://gatsby-theme-brikl-demo.netlify.com "demo")
 
 It includes:
@@ -55,6 +56,45 @@ To use this theme in your Gatsby sites, follow these instructions:
     ```
 
     The demo will start at http://localhost:8000
+
+## Component Shadowing
+
+You can use Gatsby component shadowing to change the behaviour/appearance of components.
+
+If you wanted to change the look of the products in /products page, you could create the following file inside your Gatsby project.
+
+```js
+// src/@brikl/gatsby-theme-brikl-store/components/Product.js
+
+import React from "react";
+import { getTextFromLanguage } from "@brikl/gatsby-theme-brikl-store/src/utils/utils";
+import { Link } from "gatsby";
+import { Grid } from "@material-ui/core";
+
+const NewProduct = ({ product, langCode, urlPrefix }) => {
+  return (
+    <Grid item xs={12} sm={6} md={4} lg={3} xl={3} key={product.id}>
+      <h1>{getTextFromLanguage(product.title.text, langCode)}</h1>
+      <h5>{getTextFromLanguage(product.description.text, langCode)}</h5>
+      <h3>
+        price: ${product.price.value} {product.price.currency}
+      </h3>
+      <Link
+        to={
+          `${urlPrefix}/products/` +
+          getTextFromLanguage(product.slugs, langCode)
+        }
+      >
+        Details
+      </Link>
+    </Grid>
+  );
+};
+
+export default NewProduct;
+```
+
+For more examples, check out the `/demo-shadowed` folder. You can also see a demo website of the shadowed examples [here](https://gatsby-theme-brikl-demo-shadowed.netlify.com "demo-shadowed")
 
 ## Roadmap
 
