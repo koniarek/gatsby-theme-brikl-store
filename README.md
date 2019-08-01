@@ -1,6 +1,7 @@
 # Gatsby Theme for BrikL Storefronts
 
 A Gatsby theme for building eCommerce storefronts powered by [BrikL](https://www.brikl.io "BrikL")
+
 A live demo can be found [here](https://gatsby-theme-brikl-demo.netlify.com "demo")
 
 It includes:
