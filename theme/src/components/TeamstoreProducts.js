@@ -16,7 +16,6 @@ const TeamstoreProducts = ({
       style={{ padding: "12px 24px" }}
     >
       {products.edges.map(productData => {
-        console.log(productData)
         let product = productData.node.product
 
         return (
