@@ -10,7 +10,6 @@ const TeamstoreTemplate = ({ pageContext }) => {
   const teamstore = pageContext.teamstore
   let langCode = pageContext.languages
   let urlPrefix = pageContext.urlPrefix.split("/")[0]
-  console.log(teamstore)
   try {
     return (
       <Layout pageContext={pageContext}>
