@@ -55,3 +55,15 @@ To use this theme in your Gatsby sites, follow these instructions:
     ```
 
     The demo will start at http://localhost:8000
+
+## Roadmap
+
+Next steps:
+
+- [ ] NPM & sem-ver workflow
+- [ ] Brikl design studio integration
+- [ ] Tests
+- [ ] Add to cart mutation
+- [ ] Checkout & payment
+- [ ] Provide sample userId and clientId for demo purposes
+- [ ] Contribution guidelines

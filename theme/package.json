@@ -9,12 +9,13 @@
     "Patrik Molnar <info@patrikmolnar.com>",
     "Tobias Meixner <meixner.tobias@gmail.com>"
   ],
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "index.js",
   "scripts": {
     "build": "gatsby build",
     "develop": "yarn && gatsby develop",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "npm-publish": "cp ../README.md . && npm publish"
   },
   "license": "MIT",
   "peerDependencies": {
