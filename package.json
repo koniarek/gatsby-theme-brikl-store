@@ -6,6 +6,6 @@
     "demo-shadowed"
   ],
   "devDependencies": {
-    "semantic-release": "15.13.18"
+    "semantic-release": "17.2.3"
   }
 }
